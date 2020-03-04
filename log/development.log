@@ -1,0 +1,2165 @@
+  [1m[35m (385.4ms)[0m  [1m[35mCREATE DATABASE "ViewTube_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (262.3ms)[0m  [1m[35mCREATE DATABASE "ViewTube_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1048954134990600615)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200228215137)
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200228215137_create_users.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200228215137_create_users.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1048954134990600615)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1048954134990600615)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200228215137)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200228215137_create_users.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20200228215137_create_users.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200228215137"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-02-28 22:32:56.817315"], ["updated_at", "2020-02-28 22:32:56.817315"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1048954134990600615)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-02-28 16:05:31 -0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.6ms)
+Completed 200 OK in 2467ms (Views: 2465.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-28 16:06:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-28 16:06:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 11:34:33 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (2.7ms)
+Completed 200 OK in 2080ms (Views: 2077.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 12:00:31 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.8ms)
+Completed 200 OK in 744ms (Views: 740.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 12:05:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 920ms (Views: 918.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 12:06:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 1132ms (Views: 1131.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 12:58:02 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 978ms (Views: 977.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 16:42:35 -0800
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3848ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `current_user' for #<#<Class:0x00007ffb6495d668>:0x00007ffb64967168>
+Did you mean?  current_page?:
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___3893430295274542053_70358850603640'
+
+Started POST "/__better_errors/d1d78e3dd086a374/variables" for ::1 at 2020-03-02 16:42:40 -0800
+Started GET "/" for ::1 at 2020-03-02 16:44:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 16:50:31 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 943ms (Views: 941.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 16:52:00 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 980ms (Views: 977.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 16:53:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 17:01:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 17:02:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 1060ms (Views: 1059.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:03:26 -0800
+  
+ActionController::RoutingError (No route matches [POST] "/api/users"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.3) lib/puma/configuration.rb:227:in `call'
+puma (3.12.3) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.3) lib/puma/server.rb:476:in `process_client'
+puma (3.12.3) lib/puma/server.rb:334:in `block in run'
+puma (3.12.3) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-03-02 17:14:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:15:29 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"asdf", "last_name"=>"fdsa", "email"=>"asdfasdf@asdf", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf@asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "asdf"], ["last_name", "fdsa"], ["email", "asdfasdf@asdf"], ["password_digest", "$2a$12$i0uVQHY4QuadxvVWZUdpDee860Jqv758cBAsO.OVN.vVip0h1Gf6a"], ["session_token", "EnvhitxRkvOX9Vj0FfoI2A"], ["created_at", "2020-03-03 01:15:29.801810"], ["updated_at", "2020-03-03 01:15:29.801810"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 329ms (Views: 4.5ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:16:52 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"asdf", "last_name"=>"fdsa", "email"=>"asdfasdf@asdf", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf@asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 342ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:17:06 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"asdfa", "last_name"=>"fdsafasdf", "email"=>"asdfasdf@aasdfsdf", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf@aasdfsdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "asdfa"], ["last_name", "fdsafasdf"], ["email", "asdfasdf@aasdfsdf"], ["password_digest", "$2a$12$uZi/M9VeuffK1JsjZicK1OA.JHkLNhjbB75.DgUPdZy8Q8VKBdU3e"], ["session_token", "zeH79C5aslbeN6Lgloj3Rw"], ["created_at", "2020-03-03 01:17:07.259638"], ["updated_at", "2020-03-03 01:17:07.259638"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.3ms)
+Completed 200 OK in 321ms (Views: 4.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 17:17:10 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zeH79C5aslbeN6Lgloj3Rw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 931ms (Views: 927.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 17:29:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zeH79C5aslbeN6Lgloj3Rw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1316ms (Views: 1308.0ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:30:57 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"jimbo@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimbo@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "jimbo@gmail"], ["password_digest", "$2a$12$J87TySaN2BO9p2BWk1u15Omopquu4bwa/IzcXgi.vhYkFd2IVjLrm"], ["session_token", "EWGiRNYG3EHqtTnFpoHr0A"], ["created_at", "2020-03-03 01:30:58.031315"], ["updated_at", "2020-03-03 01:30:58.031315"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 2.0ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "first_name" violates not-null constraint
+DETAIL:  Failing row contains (3, null, null, jimbo@gmail, $2a$12$J87TySaN2BO9p2BWk1u15Omopquu4bwa/IzcXgi.vhYkFd2IVjLrm, EWGiRNYG3EHqtTnFpoHr0A, 2020-03-03 01:30:58.031315, 2020-03-03 01:30:58.031315).
+:
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 17:32:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zeH79C5aslbeN6Lgloj3Rw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 80ms (Views: 71.2ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:33:16 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"jimbo@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimbo@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 292ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:33:51 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"jimbo222@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimbo222@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 326ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/users" for ::1 at 2020-03-02 17:35:23 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"jj@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jj@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 313ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 17:36:30 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"jj", "last_name"=>"kk", "email"=>"jj@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jj@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "jj"], ["last_name", "kk"], ["email", "jj@gmail"], ["password_digest", "$2a$12$H/9nGfyf3Rq1U84EyJFD7eahoaqVdvTiIyZhIujerd6w1a0T65mL6"], ["session_token", "aWhI9ha1E9cMVDHjU_XUOw"], ["created_at", "2020-03-03 01:36:30.815201"], ["updated_at", "2020-03-03 01:36:30.815201"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (4.3ms)
+Completed 200 OK in 304ms (Views: 9.5ms | ActiveRecord: 6.8ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/session" for ::1 at 2020-03-02 17:36:51 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"first_name"=>"jj", "last_name"=>"kk", "email"=>"jj@gmail", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jj@gmail"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 286ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-02 17:38:07 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aWhI9ha1E9cMVDHjU_XUOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "jj@gmail"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TCLfGajwytV3Qdl00Fo-yg"], ["updated_at", "2020-03-03 01:38:07.884518"], ["id", 4]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 08:51:25 -0800
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 2078ms (Views: 2077.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 08:57:06 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"aaa", "last_name"=>"aaa", "email"=>"aaaQ", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aaaQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "aaa"], ["last_name", "aaa"], ["email", "aaaQ"], ["password_digest", "$2a$12$JoHnHQpzYNIj57eLqLozS.6gaLQG.pqyjtb0yhbNMnScQU2lzRHYS"], ["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["created_at", "2020-03-03 16:57:06.744896"], ["updated_at", "2020-03-03 16:57:06.744896"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 307ms (Views: 5.9ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 08:58:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 927ms (Views: 923.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:01:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 991ms (Views: 986.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:02:03 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:02:23 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1011ms (Views: 1008.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:03:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 839ms (Views: 837.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:03:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 916ms (Views: 913.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 09:03:48 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y-oH4Ny__e8sBBVsH5Nk6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "aaaQ"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "EIfL2O7NzrQ1Tq6Wxjs8Vw"], ["updated_at", "2020-03-03 17:03:48.101635"], ["id", 5]]
+  ↳ app/models/user.rb:34
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 29ms (Views: 0.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:05:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 1011ms (Views: 1006.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 09:05:52 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"ffffffffffffffffffff", "last_name"=>"fffffffffffffffffffffff", "email"=>"fffffffffffffffffffffff", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fffffffffffffffffffffff"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "ffffffffffffffffffff"], ["last_name", "fffffffffffffffffffffff"], ["email", "fffffffffffffffffffffff"], ["password_digest", "$2a$12$Ld9Yr/w6lRFY41rKlFroTOnxCFZjFwNWJKQXLBPiLVR7.Dehj6rV."], ["session_token", "NSWRItyJVZ0BaB33zJ7p4A"], ["created_at", "2020-03-03 17:05:52.814706"], ["updated_at", "2020-03-03 17:05:52.814706"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 312ms (Views: 6.4ms | ActiveRecord: 7.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 09:05:54 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NSWRItyJVZ0BaB33zJ7p4A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "fffffffffffffffffffffff"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GDHOfFiuSRJqNsNVKhgylQ"], ["updated_at", "2020-03-03 17:05:54.837421"], ["id", 6]]
+  ↳ app/models/user.rb:34
+  [1m[35m (15.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 42ms (Views: 0.7ms | ActiveRecord: 19.7ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-03-03 09:17:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 818ms (Views: 816.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 09:20:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 870ms (Views: 868.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:04:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:06:04 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 857ms (Views: 854.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 10:06:36 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"password", "last_name"=>"password", "email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "password"], ["last_name", "password"], ["email", "password"], ["password_digest", "$2a$12$Lf9uCQwCZzZY5UuCk7ChAuEmA7s/2iY.W4vsYRXiPuQiGwUsbm75S"], ["session_token", "68f3Oe-yfRekRTn5l2WYrg"], ["created_at", "2020-03-03 18:06:36.932947"], ["updated_at", "2020-03-03 18:06:36.932947"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 317ms (Views: 12.7ms | ActiveRecord: 7.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 10:06:38 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "68f3Oe-yfRekRTn5l2WYrg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Osz_zuHxk_VR0NzSyRUH2Q"], ["updated_at", "2020-03-03 18:06:38.083233"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:08:33 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 833ms (Views: 828.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 10:08:40 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 323ms (Views: 5.6ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 10:08:44 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Osz_zuHxk_VR0NzSyRUH2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "S5y2wM_hWrPfZf2wFoeB2A"], ["updated_at", "2020-03-03 18:08:44.156121"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 33ms (Views: 0.7ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 10:08:49 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 324ms (Views: 5.3ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 10:08:50 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "S5y2wM_hWrPfZf2wFoeB2A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "822SQxxVzWcv0wmiTOaRNQ"], ["updated_at", "2020-03-03 18:08:50.509006"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 33ms (Views: 0.8ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 10:09:00 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 340ms (Views: 6.3ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 10:09:47 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "822SQxxVzWcv0wmiTOaRNQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WFpvX7UKgnUOFcHsnFawDA"], ["updated_at", "2020-03-03 18:09:47.242690"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/session" for ::1 at 2020-03-03 10:11:05 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 353ms (Views: 5.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 10:11:06 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WFpvX7UKgnUOFcHsnFawDA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Y4wLus-5dDLcpr7UhZFXBQ"], ["updated_at", "2020-03-03 18:11:06.681305"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 34ms (Views: 0.7ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:12:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 564ms (Views: 560.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:12:59 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:14:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:29:31 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 540ms (Views: 537.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:34:23 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 90ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:38:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 804ms (Views: 802.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:38:40 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 830ms (Views: 827.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:39:31 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (2.1ms)
+Completed 200 OK in 791ms (Views: 787.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:39:38 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.6ms)
+Completed 200 OK in 809ms (Views: 807.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:39:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 949ms (Views: 947.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:53:41 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 825ms (Views: 823.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 10:57:32 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 813ms (Views: 810.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:25:19 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:28:38 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:29:12 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:35:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 796ms (Views: 795.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:36:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:37:12 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.7ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:37:21 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:45:16 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 800ms (Views: 798.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:48:49 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 791ms (Views: 790.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:49:06 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 827ms (Views: 824.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:50:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 793ms (Views: 790.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:51:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.5ms)
+Completed 200 OK in 99ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:52:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:53:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:54:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:56:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 102ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:58:18 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 804ms (Views: 800.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:59:15 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 1087ms (Views: 1084.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 11:59:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.6ms)
+Completed 200 OK in 66ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:07:14 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 793ms (Views: 791.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:07:38 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:08:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:10:31 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 61ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:11:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:11:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:11:59 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:18:38 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 868ms (Views: 866.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:19:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.7ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:57:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:58:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 92ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 12:58:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:00:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 118ms (Views: 115.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:01:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 92ms (Views: 89.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:01:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:39:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:42:46 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 68ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:45:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 91.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:46:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:46:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:47:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:47:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:47:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:49:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 67ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:54:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:58:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:59:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:06:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 797ms (Views: 795.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:09:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 865ms (Views: 861.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:10:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 832ms (Views: 829.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:11:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 807ms (Views: 805.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:14:12 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 826ms (Views: 823.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:14:43 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:14:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.4ms)
+Completed 200 OK in 809ms (Views: 805.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:16:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 828ms (Views: 826.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:18:03 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 867ms (Views: 862.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:19:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+Completed 200 OK in 835ms (Views: 830.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:19:58 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 787ms (Views: 784.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:21:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 840ms (Views: 839.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:21:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 827ms (Views: 826.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:22:33 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 813ms (Views: 811.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:22:56 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 841ms (Views: 840.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:23:10 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 832ms (Views: 831.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:23:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:24:18 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 821ms (Views: 819.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:25:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 813ms (Views: 812.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:30:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (2.0ms)
+Completed 200 OK in 890ms (Views: 887.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:30:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 929ms (Views: 926.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:31:06 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 809ms (Views: 807.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:37:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 801ms (Views: 799.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:48:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 799ms (Views: 796.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:51:04 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 836ms (Views: 834.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:54:00 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 820ms (Views: 818.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:54:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:55:05 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 840ms (Views: 839.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:55:41 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.7ms)
+Completed 200 OK in 851ms (Views: 848.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:56:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 889ms (Views: 883.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:59:00 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 822ms (Views: 820.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:59:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.4ms)
+Completed 200 OK in 838ms (Views: 834.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:13:05 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:21:35 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "            top": expected ";", was ": 0;":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1529175138559361916_70101804194640'
+
+Started POST "/__better_errors/eaa802dc935ec0ad/variables" for ::1 at 2020-03-03 15:21:35 -0800
+Started GET "/" for ::1 at 2020-03-03 15:22:04 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:27:46 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 813ms (Views: 812.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:30:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 88ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:30:58 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 87ms (Views: 85.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:32:10 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"asdf", "last_name"=>"asdfafd", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 305ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:34:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (3.5ms)
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:34:18 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:34:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:34:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 66ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:34:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 126ms (Views: 123.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:35:05 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 103ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:35:14 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 77ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:35:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 62ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:35:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 79ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:35:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:21 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 818ms (Views: 816.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.6ms)
+Completed 200 OK in 90ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:48:08 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 844ms (Views: 841.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:49:58 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 834ms (Views: 833.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:50:21 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 826ms (Views: 823.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:51:51 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:01:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 817ms (Views: 815.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:02:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 107ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:03:10 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 132ms (Views: 130.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:03:49 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 105ms (Views: 103.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:04:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 101ms (Views: 95.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:05:06 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 149ms (Views: 145.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:06:40 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:11:41 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 884ms (Views: 881.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:11:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:12:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:13:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 90ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:13:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 75ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:13:51 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:14:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:17:03 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:17:12 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 84ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:23:48 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:23:50 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.4ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:24:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:24:48 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:25:08 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:25:56 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:26:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:28:24 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 78ms (Views: 77.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:35:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:35:35 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:35:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:35:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:36:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:36:32 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:36:33 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:39:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:40:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:41:21 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:41:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+Completed 200 OK in 81ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:42:00 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:44:20 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 86ms (Views: 83.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:44:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:45:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:46:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+Completed 200 OK in 102ms (Views: 100.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:47:03 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:48:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:49:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 111ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:49:21 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:50:05 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:59:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 74ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:00:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:01:38 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"asdf", "last_name"=>"asdf", "email"=>"asdf", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 356ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:03:18 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:03:33 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:04:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:07:17 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:07:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 78ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:08:13 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"user", "last_name"=>"suer", "email"=>"asdf", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "user"], ["last_name", "suer"], ["email", "asdf"], ["password_digest", "$2a$12$RQVJ20IFDBBAga2UOWgeMO8TgPK8IxsOrzLp4ljzx6r7NO7PLBpqm"], ["session_token", "d93OPis6ZyWqRA70CP5T3Q"], ["created_at", "2020-03-04 01:08:14.178109"], ["updated_at", "2020-03-04 01:08:14.178109"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 326ms (Views: 5.6ms | ActiveRecord: 6.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 17:08:16 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "d93OPis6ZyWqRA70CP5T3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "asdf"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "S_T_L9UHsi2WwYfNbtTkDA"], ["updated_at", "2020-03-04 01:08:16.850033"], ["id", 8]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 34ms (Views: 0.6ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:11:22 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 110ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:11:59 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:12:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 57ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:12:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 236ms (Views: 233.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:12:35 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 298ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:12:59 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:13:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:13:30 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:13:33 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:15:39 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 290ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:16:02 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:16:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:18:07 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 102ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:18:08 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 347ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:19:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 800ms (Views: 797.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:21:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+Completed 200 OK in 896ms (Views: 894.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:23:00 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.5ms)
+Completed 200 OK in 860ms (Views: 858.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 17:23:20 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 298ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 17:23:23 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y4wLus-5dDLcpr7UhZFXBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "35pNnd5-vEafBfDAqWRacQ"], ["updated_at", "2020-03-04 01:23:23.265856"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 32ms (Views: 1.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:26:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+Completed 200 OK in 843ms (Views: 840.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:26:51 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+Completed 200 OK in 76ms (Views: 72.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:28:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+Completed 200 OK in 821ms (Views: 818.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:29:25 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 835ms (Views: 831.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:30:05 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 200 OK in 826ms (Views: 825.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:32:03 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 815ms (Views: 812.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:33:49 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 896ms (Views: 894.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 17:44:54 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 280ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 17:47:08 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "35pNnd5-vEafBfDAqWRacQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aH7u5UE7yehQd90qfYRHsA"], ["updated_at", "2020-03-04 01:47:08.809914"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:53:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+Completed 200 OK in 937ms (Views: 936.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:53:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+Completed 200 OK in 881ms (Views: 878.5ms | ActiveRecord: 0.0ms)
+
+
