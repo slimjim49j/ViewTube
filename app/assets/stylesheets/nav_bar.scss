@@ -1,0 +1,38 @@
+.search-form {
+
+    svg {
+        display: inline-block;
+        // margin-top: 4px;
+        
+        fill: gray;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.login-btn {
+    color: #065fd4;
+    
+    width: 70px;
+    padding: 5px 11px;
+    border: 1px solid #065fd4;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+    
+    svg {
+        display: inline-block;
+        // margin-top: 4px;
+        
+        fill: #065fd4;
+        height: 20px;
+        width: 20px;
+    }
+
+    span {
+        margin-left: 8px;
+        font: 600 14px "Roboto", "Arial", sans-serif;
+        text-decoration: none;
+    }
+}
