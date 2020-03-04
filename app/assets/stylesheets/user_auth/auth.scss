@@ -1,15 +1,17 @@
 .form-wrapper {
     font-family: 'Noto Sans', sans-serif;
 
-    margin: 0 20%;
+    max-width: 600px;
     border: 1px solid #dadce0;
     border-radius: 3px;
+    margin: auto 20%;
     
     form {
+        max-width: 500px;
         padding: 48px 40px 36px;
     }
 
-    h1{
+    h1 {
         font-size: 24px;
         font-weight: 400;
         color: 202124;
@@ -27,7 +29,8 @@
         padding: 24px 0 0;
 
         .field {
-            // display: inline-block;
+            height: 90px;
+            display: inline-block;
             // position: relative;
             // width: auto;
 
@@ -39,10 +42,11 @@
 
             input {
                 background: transparent;
+                box-sizing: border-box;
                 // outline: none;
                 z-index: 2;
                 
-                height: 20px;
+                height: 34px;
                 // width: 100px;
                 padding: 7px 11px;
                 border: 1px solid lightgray;
@@ -94,7 +98,18 @@
         
     }
 
+    .name-wrapper {
+        // display: flex;
+        // justify-content: space-between;
+        input, label, .field {
+            max-width: 200px;
+        }
+    }
+
     .link-wrapper{
+        display: flex;
+        justify-content: space-between;
+        
         margin: 32px 0 0;
         
         a {
@@ -120,5 +135,20 @@
             cursor: pointer;
         }
 
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        font-weight: 400;
+        // display: flex;
+        // align-content: center;
+
+        // svg {
+        //     padding-top: 5px;
+        // }
+        // span {
+        //     height: 6px; 
+        // }
     }
 }

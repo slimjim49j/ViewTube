@@ -21,7 +21,9 @@ class Login extends React.Component {
         //add error checking
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push("/")) //change redirect?
+            .then(() => this.props.history.push("/")) 
+            .fail(fail => console.log(this.props.receiveSessionErrors(fail.responseJSON), fail));
+            //change redirect?
     }
 
     handleLabel(e) {
@@ -42,6 +44,12 @@ class Login extends React.Component {
     }
     
     render() {
+        const errorSymbol = (
+            <svg fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                </path>
+            </svg>
+        )
         return (
             <div className="form-wrapper">
                 <form action="">
@@ -86,6 +94,7 @@ class Login extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleInput("email")}
                             />
+
                         </div>
                         <div className="field">
                             <label htmlFor="password"><span>Enter Your Password</span></label>
@@ -95,6 +104,15 @@ class Login extends React.Component {
                                 value={this.state.password}
                                 onChange={this.handleInput("password")}
                             />
+                            <div className="error">
+                                {this.props.errors.includes("Invalid credentials") ? (
+                                    <div>
+                                        {errorSymbol}
+                                        <span>Invalid Credentials</span>
+
+                                    </div>
+                                ) : null}
+                            </div>
                         </div>
                         <div className="link-wrapper">
                             <Link to="/signup">Create account</Link>

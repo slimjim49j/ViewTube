@@ -26,7 +26,9 @@ class Signup extends React.Component {
         //make db password 8 chars long
         e.preventDefault();
         this.props.createNewUser(this.state)
-            .then( () => this.props.history.push("/")) //change redirect?
+            .then( () => this.props.history.push("/"))
+            .fail(fail => this.props.receiveSessionErrors(fail.responseJSON));
+            //change redirect?
     }
 
     handleLabel(e) {
@@ -48,8 +50,13 @@ class Signup extends React.Component {
     }
     
     render() {
+        const errorSymbol = (
+            <svg fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z">
+                </path>
+            </svg>
+        )
         return (
-
             <div className="form-wrapper">
                 <form>
                     <div>
@@ -83,23 +90,46 @@ class Signup extends React.Component {
                     <h1 className="form-heading">Create Your Googol Account</h1>
                     <p className="form-heading">to continue to ViewTube</p>
                     <div className="form-content" onChange={this.handleLabel} onBlur={this.handleLabel} onFocus={this.handleLabel}>
-                        <div className="field">
-                            <label htmlFor="first-name"><span>First name</span></label>
-                            <input
-                                id="first-name"
-                                type="text"
-                                value={this.state.firstName}
-                                onChange={this.handleInput("firstName")}
-                            />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="last-name"><span>Last name</span></label>
-                            <input
-                                id="last-name"
-                                type="text"
-                                value={this.state.lastName}
-                                onChange={this.handleInput("lastName")}
+                        <div className="name-wrapper">
+
+                            <div className="field">
+                                <label htmlFor="first-name"><span>First name</span></label>
+                                <input
+                                    id="first-name"
+                                    type="text"
+                                    value={this.state.firstName}
+                                    onChange={this.handleInput("firstName")}
                                 />
+                                <div className="error">
+                                    {this.props.errors.includes("First name can't be blank") ? (
+                                        <div>
+                                            {errorSymbol}
+                                            <span>Enter first name</span>
+
+                                        </div>
+                                    ): null}
+                                </div>
+                                    
+                            </div>
+
+                            <div className="field">
+                                <label htmlFor="last-name"><span>Last name</span></label>
+                                <input
+                                    id="last-name"
+                                    type="text"
+                                    value={this.state.lastName}
+                                    onChange={this.handleInput("lastName")}
+                                    />
+                                <div className="error">
+                                    {this.props.errors.includes("Last name can't be blank") ? (
+                                        <div>
+                                            {errorSymbol}
+                                            <span>Enter last name</span>
+
+                                        </div>
+                                    ) : null}
+                                </div>
+                            </div>
                         </div>
                         <div className="field">
                             <label htmlFor="email"><span>Your email address</span></label>
@@ -109,6 +139,15 @@ class Signup extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleInput("email")}
                                 />
+
+                            <div className="error">
+                                {this.props.errors.includes("Email can't be blank") ? (
+                                    <div>
+                                        {errorSymbol}
+                                        <span>Choose a Gmail address</span>
+                                    </div>
+                                ) : null}
+                            </div>
                         </div>
                         <div className="password-wrapper">
                             <div className="field">
@@ -119,6 +158,16 @@ class Signup extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleInput("password")}
                                     />
+                                
+                                <div className="error">
+                                    {this.props.errors.includes("Password is too short (minimum is 6 characters)") ? (
+                                        <div>
+                                            {errorSymbol}
+                                            <span>{this.state.password.length === 0 ? "Enter a password" : "Password is too short (minimum is 6 characters)"}</span>
+
+                                        </div>
+                                    ) : null}
+                                </div>
                             </div>
                             <div className="field">
                                 <label htmlFor="confirm"><span>Confirm</span></label>
@@ -141,4 +190,4 @@ class Signup extends React.Component {
     }
 }
 
-export default Signup
+export default Signup;
