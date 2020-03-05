@@ -22,8 +22,18 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.login(this.state)
             .then(() => this.props.history.push("/")) 
-            .fail(fail => console.log(this.props.receiveSessionErrors(fail.responseJSON), fail));
+            .fail(fail => this.failCallback(fail));
             //change redirect?
+    }
+
+    failCallback(response) {
+        switch (response.status) {
+            case 401:
+                return this.props.receiveSessionErrors(response.responseJSON);
+            default:
+                // console.log(response);
+                return;
+        }
     }
 
     handleLabel(e) {
