@@ -4703,3 +4703,1208 @@ Processing by Api::UsersController#create as */*
 Completed 401 Unauthorized in 311ms (Views: 0.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-03-04 17:47:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 294ms (Views: 292.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2020-03-04 17:47:48 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2020-03-04 17:47:50 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 350ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2020-03-04 17:48:00 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 304ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-04 18:18:43 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 322ms (Views: 5.7ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-04 18:21:49 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4TI92s42Mslt6iAYm9g_Iw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "xD0bvPM5Ih86dggBSwXsXw"], ["updated_at", "2020-03-05 02:21:50.014173"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-04 18:52:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-04 18:52:58 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-04 18:53:03 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 344ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-04 18:53:08 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 334ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-04 18:53:11 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+Completed 401 Unauthorized in 6ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-04 18:53:20 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+Completed 401 Unauthorized in 7ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-04 18:53:35 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"password", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "password"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 343ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-04 18:59:52 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xD0bvPM5Ih86dggBSwXsXw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "password"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JAiSEvC-p5LF9MAxXk0Tzg"], ["updated_at", "2020-03-05 02:59:52.473023"], ["id", 7]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-04 19:00:24 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-05 09:46:04 -0800
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"test", "last_name"=>"password is tester", "email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "test"], ["last_name", "password is tester"], ["email", "tester@test.com"], ["password_digest", "$2a$12$ZQRcpyc3A45mIzTbxl.9AOgqs/0way8xt21XGM8zXJ5PZuL5n1W4e"], ["session_token", "7X-nIzLfy2uD0ZroKsJBFg"], ["created_at", "2020-03-05 17:46:05.196646"], ["updated_at", "2020-03-05 17:46:05.196646"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.8ms)
+Completed 200 OK in 323ms (Views: 12.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 09:46:07 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7X-nIzLfy2uD0ZroKsJBFg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 931ms (Views: 927.3ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mChannel Create (0.5ms)[0m  [1m[32mINSERT INTO "channels" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test channel"], ["description", "desc"], ["user_id", 10], ["created_at", "2020-03-05 17:47:47.029739"], ["updated_at", "2020-03-05 17:47:47.029739"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mChannel Load (1.5ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Started DELETE "/api/session" for ::1 at 2020-03-05 10:00:30 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7X-nIzLfy2uD0ZroKsJBFg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "6oMQouS-w4m6P9mg35s2ow"], ["updated_at", "2020-03-05 18:00:30.431692"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 10:00:43 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 316ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 10:01:12 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6oMQouS-w4m6P9mg35s2ow"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Atwy8POXOHQTTMqfWSyDXA"], ["updated_at", "2020-03-05 18:01:12.547752"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 10:01:36 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+Completed 401 Unauthorized in 9ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 10:33:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+Completed 200 OK in 939ms (Views: 937.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 10:33:26 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 294ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 10:33:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Atwy8POXOHQTTMqfWSyDXA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1045ms (Views: 1043.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 10:34:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Atwy8POXOHQTTMqfWSyDXA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 87ms (Views: 80.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 10:44:08 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Atwy8POXOHQTTMqfWSyDXA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 10:48:01 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Atwy8POXOHQTTMqfWSyDXA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HaFR2gui7gszJRRJp5aIug"], ["updated_at", "2020-03-05 18:48:01.758740"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 11:05:14 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 300ms (Views: 6.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 11:49:49 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HaFR2gui7gszJRRJp5aIug"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1455ms (Views: 1452.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 11:52:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HaFR2gui7gszJRRJp5aIug"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1769ms (Views: 1766.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 11:53:02 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HaFR2gui7gszJRRJp5aIug"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "39nfPVi3VJiTOEKN7Ygltg"], ["updated_at", "2020-03-05 19:53:02.103246"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 11:53:23 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (5.5ms)
+Completed 200 OK in 320ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 11:55:04 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "39nfPVi3VJiTOEKN7Ygltg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1951ms (Views: 1949.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 11:55:20 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "39nfPVi3VJiTOEKN7Ygltg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PyyWAaCVeh6WFKeYHB8dFA"], ["updated_at", "2020-03-05 19:55:20.508390"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 11:55:38 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 303ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 12:04:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PyyWAaCVeh6WFKeYHB8dFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 101ms (Views: 99.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 13:31:02 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PyyWAaCVeh6WFKeYHB8dFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1046ms (Views: 1042.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 13:32:02 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PyyWAaCVeh6WFKeYHB8dFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1105ms (Views: 1104.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 13:32:08 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PyyWAaCVeh6WFKeYHB8dFA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["updated_at", "2020-03-05 21:32:08.172942"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 13:32:23 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 319ms (Views: 5.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 13:37:16 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 947ms (Views: 943.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:02:41 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1129ms (Views: 1127.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:03:38 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1356ms (Views: 1354.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:03:59 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 923ms (Views: 921.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:04:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1049ms (Views: 1048.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:06:42 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1274ms (Views: 1273.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:10:18 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1065ms (Views: 1063.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:10:45 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1168ms (Views: 1167.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:11:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 936ms (Views: 934.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:12:43 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1157ms (Views: 1155.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:13:48 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1004ms (Views: 1002.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:13:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 70ms (Views: 65.9ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-05 14:19:26 -0800
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JRE3IhU28GsKISR6xwIRzA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tester@test.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["updated_at", "2020-03-05 22:19:26.121837"], ["id", 10]]
+  ↳ app/models/user.rb:34
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-05 14:19:40 -0800
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tester@test.com", "password"=>"[FILTERED]"}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tester@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 290ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:31:16 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1161ms (Views: 1159.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:39:37 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 986ms (Views: 984.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:40:02 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 14:40:22 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1172ms (Views: 1168.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:34:14 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1197ms (Views: 1195.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:36:24 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:39:29 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:40:13 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 85ms (Views: 83.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:40:43 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 117ms (Views: 114.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:40:47 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:57:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 162ms (Views: 159.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 15:59:50 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 141ms (Views: 138.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:00:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 104ms (Views: 100.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:03:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:04:44 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 100ms (Views: 98.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:05:14 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 117ms (Views: 114.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:05:56 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 112ms (Views: 108.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:06:34 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 216ms (Views: 214.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:06:49 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:07:01 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 90ms (Views: 82.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:07:41 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "    }": expected selector or at-rule, was "}":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___3993898483565777256_69872025363940'
+
+Started POST "/__better_errors/9ab56477222ea170/variables" for ::1 at 2020-03-05 16:07:41 -0800
+Started GET "/" for ::1 at 2020-03-05 16:07:53 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 82ms (Views: 78.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:08:50 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 137ms (Views: 135.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:09:11 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:09:55 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:10:17 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 98ms (Views: 95.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:10:39 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:10:52 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 125ms (Views: 122.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:11:09 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 140ms (Views: 137.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:12:27 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 86ms (Views: 85.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:15:36 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 105ms (Views: 102.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 16:15:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:07:40 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1040ms (Views: 1036.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:08:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 943ms (Views: 941.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:12:28 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1108ms (Views: 1104.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:17:40 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1080ms (Views: 1077.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:18:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 962ms (Views: 960.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/videos" for ::1 at 2020-03-05 17:18:40 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"post"=>{"title"=>"test 2", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18b8114158 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-1km5gl5.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"post[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 10.6ms)
+
+
+
+NoMethodError - undefined method `[]=' for nil:NilClass:
+  app/controllers/api/videos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2020-03-05 17:20:15 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1240ms (Views: 1237.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/videos" for ::1 at 2020-03-05 17:20:31 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"test 3", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18b80c43b0 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-1j4mjro.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 0.5ms)
+
+
+
+NameError - undefined local variable or method `video_params' for #<Api::VideosController:0x00007f18b80c4ab8>
+Did you mean?  @_params:
+  app/controllers/api/videos_controller.rb:11:in `create'
+
+Started GET "/" for ::1 at 2020-03-05 17:20:57 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 86ms (Views: 77.7ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/videos" for ::1 at 2020-03-05 17:21:10 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"test 4", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18a4334280 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-13011bd.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.5ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+Unpermitted parameter: :channel_id
+[36m  S3 Storage (8439.0ms) [0m[32mUploaded file to key: evkggkdnPdmQL6BNhfYJ2noQ (checksum: Z7uqNGT9hq+YEsFjxKRVzA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[36mActiveStorage::Blob Create (2.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "evkggkdnPdmQL6BNhfYJ2noQ"], ["filename", "video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 29235706], ["checksum", "Z7uqNGT9hq+YEsFjxKRVzA=="], ["created_at", "2020-03-06 01:21:18.654049"]]
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+Completed 401 Unauthorized in 8641ms (Views: 0.2ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:22:54 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 82ms (Views: 73.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/videos" for ::1 at 2020-03-05 17:23:04 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"test 5", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18b80ade30 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-18m42l0.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+[36m  S3 Storage (5699.7ms) [0m[32mUploaded file to key: W53yxTPXumWy55tgWWcAYcXs (checksum: Z7uqNGT9hq+YEsFjxKRVzA==)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[36mActiveStorage::Blob Create (2.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "W53yxTPXumWy55tgWWcAYcXs"], ["filename", "video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 29235706], ["checksum", "Z7uqNGT9hq+YEsFjxKRVzA=="], ["created_at", "2020-03-06 01:23:10.624704"]]
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mChannel Load (0.6ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Create (1.2ms)[0m  [1m[32mINSERT INTO "videos" ("title", "description", "channel_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test 5"], ["description", "test desc"], ["channel_id", 2], ["created_at", "2020-03-06 01:23:10.694621"], ["updated_at", "2020-03-06 01:23:10.694621"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 2], ["blob_id", 3], ["created_at", "2020-03-06 01:23:10.699767"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Update (0.7ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-03-06 01:23:10.702940"], ["id", 2]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 5eaa49ec-8717-486b-ae12-c44127bff461) to Async(default) with arguments: #<GlobalID:0x00007f18b1be3108 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/3>>
+  Rendering api/videos/show.html.erb within layouts/application
+  Rendered api/videos/show.html.erb within layouts/application (3.7ms)
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461] Performing ActiveStorage::AnalyzeJob (Job ID: 5eaa49ec-8717-486b-ae12-c44127bff461) from Async(default) with arguments: #<GlobalID:0x00007f18b1e3f438 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/3>>
+Completed 200 OK in 6024ms (Views: 59.8ms | ActiveRecord: 47.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461] [36m  S3 Storage (6874.7ms) [0m[34mDownloaded file from key: W53yxTPXumWy55tgWWcAYcXs[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5eaa49ec-8717-486b-ae12-c44127bff461] Performed ActiveStorage::AnalyzeJob (Job ID: 5eaa49ec-8717-486b-ae12-c44127bff461) from Async(default) in 6901.23ms
+Started GET "/" for ::1 at 2020-03-05 17:28:26 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/videos" for ::1 at 2020-03-05 17:31:01 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"test 6", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18a41d65c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-11ldxe8.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+[36m  S3 Storage (5071.5ms) [0m[32mUploaded file to key: fg5a8zVnN3p88yAsRwy4JMN4 (checksum: Z7uqNGT9hq+YEsFjxKRVzA==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[36mActiveStorage::Blob Create (2.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "fg5a8zVnN3p88yAsRwy4JMN4"], ["filename", "video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 29235706], ["checksum", "Z7uqNGT9hq+YEsFjxKRVzA=="], ["created_at", "2020-03-06 01:31:06.778530"]]
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mChannel Load (1.2ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Create (0.9ms)[0m  [1m[32mINSERT INTO "videos" ("title", "description", "channel_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test 6"], ["description", "test desc"], ["channel_id", 2], ["created_at", "2020-03-06 01:31:06.839786"], ["updated_at", "2020-03-06 01:31:06.839786"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mActiveStorage::Attachment Create (2.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 3], ["blob_id", 4], ["created_at", "2020-03-06 01:31:06.847531"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Update (0.6ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-03-06 01:31:06.854591"], ["id", 3]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e6b93d94-dc58-4616-a56b-827185357972) to Async(default) with arguments: #<GlobalID:0x00007f18b1c34c38 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/4>>
+  Rendering api/videos/show.json.jbuilder
+  Rendered api/videos/show.json.jbuilder (1.8ms)
+Completed 200 OK in 5351ms (Views: 8.7ms | ActiveRecord: 52.1ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972] Performing ActiveStorage::AnalyzeJob (Job ID: e6b93d94-dc58-4616-a56b-827185357972) from Async(default) with arguments: #<GlobalID:0x00007f18b1f9b0e8 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972] [36m  S3 Storage (4124.6ms) [0m[34mDownloaded file from key: fg5a8zVnN3p88yAsRwy4JMN4[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e6b93d94-dc58-4616-a56b-827185357972] Performed ActiveStorage::AnalyzeJob (Job ID: e6b93d94-dc58-4616-a56b-827185357972) from Async(default) in 4144.8ms
+Started POST "/api/videos" for ::1 at 2020-03-05 17:32:08 -0800
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"test 7", "description"=>"test desc", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f18a8682c30 @tempfile=#<Tempfile:/tmp/RackMultipart20200305-29329-hhvvup.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:10
+[36m  S3 Storage (5017.1ms) [0m[32mUploaded file to key: gnDnTkrMTEEVESm5tUz7jC6M (checksum: Z7uqNGT9hq+YEsFjxKRVzA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "gnDnTkrMTEEVESm5tUz7jC6M"], ["filename", "video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 29235706], ["checksum", "Z7uqNGT9hq+YEsFjxKRVzA=="], ["created_at", "2020-03-06 01:32:13.855538"]]
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Create (0.5ms)[0m  [1m[32mINSERT INTO "videos" ("title", "description", "channel_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test 7"], ["description", "test desc"], ["channel_id", 2], ["created_at", "2020-03-06 01:32:13.887110"], ["updated_at", "2020-03-06 01:32:13.887110"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 4], ["blob_id", 5], ["created_at", "2020-03-06 01:32:13.889729"]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[36mVideo Update (0.5ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-03-06 01:32:13.891313"], ["id", 4]]
+  ↳ app/controllers/api/videos_controller.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:13
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3322d707-e6ed-43fa-b0ff-2edc637e7185) to Async(default) with arguments: #<GlobalID:0x00007f18b1ad3a60 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/5>>
+  Rendering api/videos/show.json.jbuilder
+  Rendered api/videos/show.json.jbuilder (1.9ms)
+Completed 200 OK in 5202ms (Views: 8.9ms | ActiveRecord: 26.4ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185] Performing ActiveStorage::AnalyzeJob (Job ID: 3322d707-e6ed-43fa-b0ff-2edc637e7185) from Async(default) with arguments: #<GlobalID:0x00007f18b1c16940 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185] [36m  S3 Storage (4532.1ms) [0m[34mDownloaded file from key: gnDnTkrMTEEVESm5tUz7jC6M[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3322d707-e6ed-43fa-b0ff-2edc637e7185] Performed ActiveStorage::AnalyzeJob (Job ID: 3322d707-e6ed-43fa-b0ff-2edc637e7185) from Async(default) in 4551.98ms
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d63abebec6da82911d64b3e4f9fdce91d9149343/video.mp4" for ::1 at 2020-03-05 17:41:14 -0800
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d63abebec6da82911d64b3e4f9fdce91d9149343", "filename"=>"video"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: gnDnTkrMTEEVESm5tUz7jC6M (https://viewtube-dev.s3.us-west-1.amazonaws.com/gnDnTkrMTEEVESm5tUz7jC6M?response-content-disposition=attachment%3B%20filename%3D%22video.mp4%22%3B%20filename%2A%3DUTF-8%27%27video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXOUC6HW3QWG3CB2R%2F20200306%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200306T014115Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=93805e4fabc4aee93e0d7cb488a81e1e078bb30a9ca53717a7ffbb2a28d6e854)[0m
+Redirected to https://viewtube-dev.s3.us-west-1.amazonaws.com/gnDnTkrMTEEVESm5tUz7jC6M?response-content-disposition=attachment%3B%20filename%3D%22video.mp4%22%3B%20filename%2A%3DUTF-8%27%27video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXOUC6HW3QWG3CB2R%2F20200306%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200306T014115Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=93805e4fabc4aee93e0d7cb488a81e1e078bb30a9ca53717a7ffbb2a28d6e854
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d63abebec6da82911d64b3e4f9fdce91d9149343/video.mp4" for ::1 at 2020-03-05 17:53:15 -0800
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d63abebec6da82911d64b3e4f9fdce91d9149343", "filename"=>"video"}
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.7ms) [0m[34mGenerated URL for file at key: gnDnTkrMTEEVESm5tUz7jC6M (https://viewtube-dev.s3.us-west-1.amazonaws.com/gnDnTkrMTEEVESm5tUz7jC6M?response-content-disposition=attachment%3B%20filename%3D%22video.mp4%22%3B%20filename%2A%3DUTF-8%27%27video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXOUC6HW3QWG3CB2R%2F20200306%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200306T015315Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6aef82c94755f15cba8c23ffee3881bfd00f7d33fa66afac7f71fbca955323ef)[0m
+Redirected to https://viewtube-dev.s3.us-west-1.amazonaws.com/gnDnTkrMTEEVESm5tUz7jC6M?response-content-disposition=attachment%3B%20filename%3D%22video.mp4%22%3B%20filename%2A%3DUTF-8%27%27video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXOUC6HW3QWG3CB2R%2F20200306%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200306T015315Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6aef82c94755f15cba8c23ffee3881bfd00f7d33fa66afac7f71fbca955323ef
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 17:53:23 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 18:00:56 -0800
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 1053ms (Views: 1049.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-05 20:40:57 -0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by RootController#root as HTML
+  Rendering root/root.html within layouts/application
+  Rendered root/root.html within layouts/application (3.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k2taoMxFrZKa-5MZQ9VnQQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 3781ms (Views: 3773.9ms | ActiveRecord: 5.7ms)
+
+
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVideo Load (1.1ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" ORDER BY "videos"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
