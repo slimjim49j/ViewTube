@@ -7,7 +7,7 @@ const receiveVideo = video => ({
     video,
 });
 
-export const findVideo = id => dispatch => getVideo(id)
+export const fetchVideo = id => dispatch => getVideo(id)
     .then( video => dispatch(receiveVideo(video)))
 
 export const createNewVideo = formVideo => dispatch => postVideo(formVideo)

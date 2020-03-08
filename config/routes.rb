@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   namespace :api, default: {format: :json} do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
+    resources :channels, only: [:create, :show]
     resources :videos
   end
   
   root to: "root#root"
 end
+

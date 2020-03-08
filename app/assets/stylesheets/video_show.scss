@@ -1,5 +1,15 @@
 .video-show {
     video {
-        width: 50%;
+        width: 100%;
     }
+    
+    h1 {
+        font: 18px "Roboto", Arial, sans-serif;
+    }
+}
+
+.video-content-wrapper {
+    width: 93%;
+    margin: 0 3%;
+
 }
