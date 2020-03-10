@@ -1,3 +1,10 @@
+export const getAllVideos = () => (
+    $.ajax({
+        url: "/api/videos",
+        method: "GET"
+    })
+)
+
 export const getVideo = id => (
     $.ajax({
         url: `/api/videos/${id}`,

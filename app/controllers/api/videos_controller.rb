@@ -1,6 +1,12 @@
 class Api::VideosController < ApplicationController
     before_action :require_logged_in, only: [:create]
     
+    def index
+        # debugger
+        @videos = Video.all
+        render :index
+    end
+    
     def show
         @video = Video.find(params[:id])
         render :show
