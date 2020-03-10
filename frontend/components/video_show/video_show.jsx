@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import Video from "./video";
+import MetaInfo from "./meta_info";
+import Comments from "../comments/comments";
+import RecommendationsContainer from "../recommendations/recommendations_container";
 
 class VideoShow extends Component {
     constructor(props) {
@@ -29,11 +33,18 @@ class VideoShow extends Component {
         return (
             <div className="video-show">
                 <div className="video-content-wrapper">
-                    <video src={this.props.video.video} autoPlay={true} controls></video>
-                    <h1>{this.props.video.title}</h1>
-                    <p>{this.props.video.created_at.slice(0, 10)}</p>
-                    <h3>{this.props.channel.title}</h3>
-                    <p>{this.props.video.description}</p>
+                    <Video src={this.props.video.video} />
+                    
+                    <MetaInfo 
+                        videoTitle={this.props.video.title}
+                        uploadDate={this.props.video.createdAt.slice(0, 10)}
+                        channelTitle={this.props.channel.title}
+                        description={this.props.video.description}
+                    />
+                    
+                    <Comments />
+
+                    <RecommendationsContainer />
                 </div>
             </div>
         )

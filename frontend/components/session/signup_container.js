@@ -4,6 +4,7 @@ import {
     receiveSessionErrors
 } from "../../actions/session";
 import Signup from "./signup";
+import { createChannel } from "../../actions/channels";
 
 const mapStateToProps = (state) => ({
     errors: state.errors.session,
@@ -12,6 +13,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
     createNewUser: formUser => dispatch(createNewUser(formUser)),
     receiveSessionErrors: errors => dispatch(receiveSessionErrors(errors)),
+    createChannel: channel => dispatch(createChannel(channel)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

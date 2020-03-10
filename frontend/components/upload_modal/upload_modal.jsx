@@ -59,8 +59,8 @@ class UploadModal extends Component {
                             </button>
                         </div>
                         <form onSubmit={this.handleSubmit}>
-                            <input type="text" onChange={this.handleInput("title")} />
-                            <textarea name="" id="" cols="15" rows="5" onChange={this.handleInput("description")}></textarea>
+                            <input type="text" placeholder="Title" onChange={this.handleInput("title")} />
+                            <textarea name="" id="" cols="15" rows="5" placeholder="Description" onChange={this.handleInput("description")}></textarea>
                             <input type="file" name="" id="" onChange={this.handleFile} />
                             <input type="submit" value="Save"/>
                         </form>

@@ -23,3 +23,12 @@ body {
     height: 100%;
     margin: 0;
 }
+
+.subtext {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(96, 96, 96);
+
+    line-height: 10px;
+    margin: 2px;
+}

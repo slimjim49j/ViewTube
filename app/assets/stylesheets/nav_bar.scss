@@ -1,12 +1,28 @@
-.search-form, .upload-btn {
+header {
+    display: flex;
+    align-items: center;
 
+    height: 56px;
+    
+    > * {
+        display: inline-block;
+    }
+
+}
+
+
+.nav-btn {
+    background-color: transparent;
+
+    border: none;
+    
     svg {
         display: inline-block;
         // margin-top: 4px;
         
         fill: gray;
-        height: 20px;
-        width: 20px;
+        height: 24px;
+        width: 24px;
     }
 }
 

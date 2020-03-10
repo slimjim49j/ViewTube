@@ -10,7 +10,7 @@ const mapStateToProps = (state, { match }) => {
     const videoId = parseInt(match.params.id);
     const video = selectVideo(state.entities.videos, videoId);
 
-    const channelId = video.channel_id;
+    const channelId = video.channelId;
     const channel = selectChannel(state.entities.channels, channelId);
     return {
         videos: state.entities.videos,

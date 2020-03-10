@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { 
     AuthRoute,
     ProtectedRoute 
@@ -15,6 +15,7 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/" component={Main} />
+            {/* <Redirect to="/" /> */}
         </Switch>
         
     </div>

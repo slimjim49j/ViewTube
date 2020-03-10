@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { createChannel } from "../../actions/channels";
 
 class Signup extends React.Component {
     constructor(props) {
@@ -26,6 +27,16 @@ class Signup extends React.Component {
         //make db password 8 chars long
         e.preventDefault();
         this.props.createNewUser(this.state)
+            .then( userAction => {
+                // debugger
+                this.props.createChannel({
+                    channel: {
+                        title: `${userAction.user.firstName} ${userAction.user.lastName}`,
+                        description: "",
+                        userId: userAction.user.id,
+                    }
+                })
+            })
             .then( () => this.props.history.push("/"))
             .fail(fail => this.props.receiveSessionErrors(fail.responseJSON));
             //change redirect?

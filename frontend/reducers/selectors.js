@@ -3,15 +3,15 @@ const _nullVideo = {
     title: "",
     description: "",
     video: "",
-    channel_id: null,
-    created_at: "",
+    channelId: null,
+    createdAt: "",
 };
 
 const _nullChannel = {
     id: null,
     title: "",
     description: "",
-    user_id: null,
+    userId: null,
 }
 
 export const selectVideo = (videos, videoId) => {

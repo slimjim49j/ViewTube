@@ -11,17 +11,23 @@
         background-color: white;
         
         position: absolute;
-        top: 40%;
-        left: 40%;
+        top: 35%;
+        left: 50%;
         
         min-width: 200px;
         max-width: 800px;
         width: 30%;
         border: 1px solid white;
         border-radius: 4px;
+        margin-left: -15%;
 
         .upload-modal-header {
+            padding-left: 10px;
             border-bottom: 1px solid lightgray;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             h3 {
                 display: inline-block;
@@ -31,7 +37,7 @@
             
             button {
                 background: none;
-                float: right;
+                // float: right;
 
                 border: none;
                 
@@ -48,6 +54,39 @@
             button:hover {
                 cursor: pointer;
             }
+
+        }
+
+        input[type=text], textarea {
+            box-sizing: border-box;
+            
+            width: 95%;
+            padding: 15px;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            margin: 10px;
+            // background-color: red;
+        }
+
+        input[type=text]:hover, textarea:hover {
+            border: 1px solid gray;
+        }
+
+        input[type=submit] {
+            display: block;
+            float: right;
+
+            background-color: #065fd4;
+            color: white;
+            font: 600 14px "Roboto", Arial, sans-serif;
+            // letter-spacing: normal;
+
+            margin: 10px;
+            padding: 8px 16px;
+        }
+
+        input[type=file] {
+            margin-left: 10px;
         }
     }
 }
