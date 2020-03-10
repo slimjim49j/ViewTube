@@ -15673,3 +15673,67 @@ Processing by Api::VideosController#index as */*
 Completed 200 OK in 67ms (Views: 54.0ms | ActiveRecord: 12.9ms)
 
 
+Started POST "/api/videos" for ::1 at 2020-03-10 10:13:46 -0700
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"video", "description"=>"", "video"=>""}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WqEVyIdpzXp7m8NuIEFKTw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:17
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms)
+
+
+
+ActiveSupport::MessageVerifier::InvalidSignature - ActiveSupport::MessageVerifier::InvalidSignature:
+  app/controllers/api/videos_controller.rb:18:in `create'
+  app/middleware/snake_case_params.rb:10:in `call'
+
+Started POST "/api/videos" for ::1 at 2020-03-10 10:18:45 -0700
+Processing by Api::VideosController#create as */*
+  Parameters: {"video"=>{"title"=>"testtset", "description"=>"testset", "video"=>#<ActionDispatch::Http::UploadedFile:0x00007f8aff022038 @tempfile=#<Tempfile:/tmp/RackMultipart20200310-2174-119cex3.mp4>, @original_filename="video.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video]\"; filename=\"video.mp4\"\r\nContent-Type: video/mp4\r\n">}, "default"=>{"format"=>:json}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WqEVyIdpzXp7m8NuIEFKTw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."user_id" = $1 LIMIT $2[0m  [["user_id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:17
+[36m  S3 Storage (5478.6ms) [0m[32mUploaded file to key: 2H4zLovBXRSXj9fQ9ChYWp6y (checksum: Z7uqNGT9hq+YEsFjxKRVzA==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:18
+  [1m[36mActiveStorage::Blob Create (8.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "2H4zLovBXRSXj9fQ9ChYWp6y"], ["filename", "video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 29235706], ["checksum", "Z7uqNGT9hq+YEsFjxKRVzA=="], ["created_at", "2020-03-10 17:18:50.674045"]]
+  ↳ app/controllers/api/videos_controller.rb:18
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/videos_controller.rb:20
+  [1m[36mChannel Load (0.5ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:20
+  [1m[36mVideo Create (1.2ms)[0m  [1m[32mINSERT INTO "videos" ("title", "description", "channel_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "testtset"], ["description", "testset"], ["channel_id", 7], ["created_at", "2020-03-10 17:18:50.706433"], ["updated_at", "2020-03-10 17:18:50.706433"]]
+  ↳ app/controllers/api/videos_controller.rb:20
+  [1m[36mActiveStorage::Attachment Create (2.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "video"], ["record_type", "Video"], ["record_id", 6], ["blob_id", 7], ["created_at", "2020-03-10 17:18:50.711065"]]
+  ↳ app/controllers/api/videos_controller.rb:20
+  [1m[36mVideo Update (0.4ms)[0m  [1m[33mUPDATE "videos" SET "updated_at" = $1 WHERE "videos"."id" = $2[0m  [["updated_at", "2020-03-10 17:18:50.714796"], ["id", 6]]
+  ↳ app/controllers/api/videos_controller.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/videos_controller.rb:20
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e) to Async(default) with arguments: #<GlobalID:0x00007f8afdeee7d0 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/7>>
+  Rendering api/videos/show.json.jbuilder
+  Rendered api/videos/_video.json.jbuilder (0.8ms)
+  Rendered api/videos/show.json.jbuilder (2.4ms)
+Completed 200 OK in 5634ms (Views: 7.6ms | ActiveRecord: 17.9ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e] Performing ActiveStorage::AnalyzeJob (Job ID: 8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e) from Async(default) with arguments: #<GlobalID:0x00007f8afe006988 @uri=#<URI::GID gid://view-tube/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e] [36m  S3 Storage (3799.7ms) [0m[34mDownloaded file from key: 2H4zLovBXRSXj9fQ9ChYWp6y[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e]   ↳ /home/slimjim49j/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e] Performed ActiveStorage::AnalyzeJob (Job ID: 8c4a0a4a-8c32-42ae-83e1-4ba718a78d3e) from Async(default) in 3820.1ms

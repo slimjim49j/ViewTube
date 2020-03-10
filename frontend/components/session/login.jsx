@@ -29,7 +29,7 @@ class Login extends React.Component {
 
     demoUser(e) {
         e.preventDefault();
-        this.props.login({email: "demouser", password: "demouser",})
+        this.props.login({email: "demouser1", password: "demouser1",})
             .then(() => this.props.history.push("/"))
             .fail(fail => this.failCallback(fail));
     }
