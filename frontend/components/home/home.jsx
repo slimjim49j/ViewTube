@@ -13,7 +13,6 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-                hi
                 <ul>
                     {this.props.videos ? (
                         Object.values(this.props.videos).map( video => <li key={video.id}><Link to={`video/${video.id}`}>{video.title}</Link></li>) 
