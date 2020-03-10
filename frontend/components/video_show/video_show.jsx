@@ -9,22 +9,28 @@ class VideoShow extends Component {
         super(props);
     }
 
-    updateVideo() {
-        // if video isn't in global state, fetch video
-        if (!this.props.videos[this.props.videoId]) {
+    updateState(slice, id, fetchItem) {
+        // if specific item isn't in global state, fetch item
+        if (!slice[id]) {
             // debugger
-            this.props.fetchVideo(this.props.videoId)
-                .then(() => this.props.fetchChannel(this.props.channelId));
+            fetchItem(id);
         }
+        // abstraction for:
+        // if(!this.props.channels[this.props.channelId]) {
+        //     // debugger
+        //     this.props.fetchChannel(this.props.channelId);
+        // }
     }
 
     componentDidMount() {
         // debugger
-        this.updateVideo();
+        this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
+        this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
     }
 
     componentDidUpdate() {
-        this.updateVideo();
+        this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
+        this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
     }
 
     render() {

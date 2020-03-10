@@ -16,7 +16,7 @@ class Home extends React.Component {
                 hi
                 <ul>
                     {this.props.videos ? (
-                        Object.values(this.props.videos).map( video => <li><Link to={`video/${video.id}`}>{video.title}</Link></li>) 
+                        Object.values(this.props.videos).map( video => <li key={video.id}><Link to={`video/${video.id}`}>{video.title}</Link></li>) 
                     ) : <p>no videos</p>
                     }
 
