@@ -9,6 +9,7 @@ class Login extends React.Component {
             password: "",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUser = this.demoUser.bind(this);
     }
 
     handleInput(type) {
@@ -24,6 +25,13 @@ class Login extends React.Component {
             .then(() => this.props.history.push("/")) 
             .fail(fail => this.failCallback(fail));
             //change redirect?
+    }
+
+    demoUser(e) {
+        e.preventDefault();
+        this.props.login({email: "demouser", password: "demouser",})
+            .then(() => this.props.history.push("/"))
+            .fail(fail => this.failCallback(fail));
     }
 
     failCallback(response) {
@@ -126,7 +134,11 @@ class Login extends React.Component {
                         </div>
                         <div className="link-wrapper">
                             <Link to="/signup">Create account</Link>
-                            <button onClick={this.handleSubmit}>Next</button> {/* change to onsubmit?*/}
+                            <div>
+                                <button onClick={this.demoUser}>Demo User</button>
+                                <button onClick={this.handleSubmit}>Next</button> {/* change to onsubmit?*/}
+
+                            </div>
                         </div>
                     </div>
                 </form>

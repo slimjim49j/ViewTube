@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { fetchVideo } from "../../actions/videos";
-import { selectVideo, selectChannel } from "../../reducers/selectors";
 import { fetchChannel } from "../../actions/channels";
-
+import { fetchVideo } from "../../actions/videos";
+import { selectChannel, selectVideo } from "../../reducers/selectors";
 import VideoShow from "./video_show";
+
 
 const mapStateToProps = (state, { match }) => {
     // debugger
