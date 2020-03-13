@@ -1,9 +1,15 @@
 header {
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    box-sizing: border-box;
 
+    top: 0;
+    
     height: 56px;
+    width: 100%;
     padding-left: 10px;
     
     > * {
