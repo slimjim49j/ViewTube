@@ -13,13 +13,13 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-                <ul>
+                <main className="home-vid-container">
                     {this.props.videos ? (
-                        Object.values(this.props.videos).map( video => <li key={video.id}><Link to={`video/${video.id}`}>{video.title}</Link></li>) 
+                        Object.values(this.props.videos).map( video => <Link to={`video/${video.id}`} className="home-vid" key={video.id}><video src={video.video}></video> {video.title}</Link>) 
                     ) : <p>no videos</p>
                     }
 
-                </ul>
+                </main>
             </div>
         )
     }
