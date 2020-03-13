@@ -3,12 +3,13 @@ class Api::VideosController < ApplicationController
     
     def index
         # debugger
-        @videos = Video.all
+        @videos = Video.includes(:likes).all
         render :index
     end
     
     def show
         @video = Video.find(params[:id])
+        # @like_count = Like.where(channel_id: current_user.channel.id).count
         render :show
     end
 

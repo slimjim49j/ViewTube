@@ -4,4 +4,7 @@ class Video < ApplicationRecord
         class_name: :Channel
 
     has_one_attached :video
+
+    has_many :likes,
+        as: :likable
 end

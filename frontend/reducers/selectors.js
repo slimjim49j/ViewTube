@@ -5,6 +5,8 @@ const _nullVideo = {
     video: "",
     channelId: null,
     createdAt: "",
+    likeCount: null,
+    userLikeId: null,
 };
 
 const _nullChannel = {
@@ -12,7 +14,7 @@ const _nullChannel = {
     title: "",
     description: "",
     userId: null,
-}
+};
 
 export const selectVideo = (videos, videoId) => {
     // debugger

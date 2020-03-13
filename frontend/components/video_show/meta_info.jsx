@@ -1,17 +1,23 @@
 import React from 'react'
+import LikesContainer from "../likes/likes_container";
 
 export default (props) => {
     // debugger
+    const videoTitle = props.video.title,
+        uploadDate = props.video.createdAt.slice(0, 10),
+        description = props.video.description,
+        likeCount = props.video.likeCount
+
     return (
         <div>
             <div className="primary-info">
 
-                <h1>{props.videoTitle}</h1>
+                <h1>{videoTitle}</h1>
                 <div >
-                    <p id="views-and-date" className="subtext"># views • {props.uploadDate}</p>
+                    <p id="views-and-date" className="subtext"># views • {uploadDate}</p>
                     <div>
-                        {/* <LikeContainer />
-                        <LikeContainer /> */}
+                        <LikesContainer />
+                        {/* <LikeContainer /> */}
                     </div>
                 </div>
             </div>
@@ -28,7 +34,7 @@ export default (props) => {
                     <button id="subscribe">SUBSCRIBE</button>
                 </div>
                 <div className="description">
-                    <p>{props.description}</p>
+                    <p>{description}</p>
                     {/* <button>SHOW MORE</button> */}
                     <p>profile pic, subscribe button, num views, and num subscribers still under construction</p>
                 </div>

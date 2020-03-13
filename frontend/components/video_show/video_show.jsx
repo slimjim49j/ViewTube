@@ -36,18 +36,20 @@ class VideoShow extends Component {
     render() {
         // debugger
 
+        // debugger
         return (
             <div className="video-show">
                 <div className="video-content-wrapper">
                     <Video src={this.props.video.video} />
-                    
-                    <MetaInfo 
+                    <MetaInfo
+                        /*likeCount={this.props.video.likeCount}
                         videoTitle={this.props.video.title}
                         uploadDate={this.props.video.createdAt.slice(0, 10)}
+                        description={this.props.video.description}*/
                         channelTitle={this.props.channel.title}
-                        description={this.props.video.description}
+                        video={this.props.video}
                     />
-                    
+
                     <Comments />
 
                     <RecommendationsContainer />
