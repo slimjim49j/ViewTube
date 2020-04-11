@@ -1,24 +1,9 @@
 # ViewTube Full Stack Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Link to Live Youtube Clone](https://viewtube-clone.herokuapp.com)
 
-Things you may want to cover:
+ViewTube is a clone of YouTube that allows for video upload and playback.
 
-* Ruby version
+This is facilitated via Ruby on Rails and Postgresql on the backend, with React/Redux on the frontend. Videos are stored on AWS S3 using the Active Storage gem.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The main features of this site currently include user authentication, video upload, and video playback.
