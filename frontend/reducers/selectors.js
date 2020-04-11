@@ -6,6 +6,7 @@ const _nullVideo = {
     channelId: null,
     createdAt: "",
     likeCount: null,
+    dislikeCount: null,
     userLikeId: null,
 };
 

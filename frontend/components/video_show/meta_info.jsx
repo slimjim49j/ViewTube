@@ -6,7 +6,9 @@ export default (props) => {
     const videoTitle = props.video.title,
         uploadDate = props.video.createdAt.slice(0, 10),
         description = props.video.description,
-        likeCount = props.video.likeCount
+        userLikeId = props.video.userLikeId,
+        likeCount = props.video.likeCount,
+        dislikeCount = props.video.dislikeCount;
 
     return (
         <div>
@@ -16,7 +18,7 @@ export default (props) => {
                 <div >
                     <p id="views-and-date" className="subtext"># views • {uploadDate}</p>
                     <div>
-                        <LikesContainer />
+                        <LikesContainer userLikeId={userLikeId} likeCount={likeCount} dislikeCount={dislikeCount} />
                         {/* <LikeContainer /> */}
                     </div>
                 </div>

@@ -1,15 +1,16 @@
 class Api::LikesController < ApplicationController
     before_action :require_logged_in, only: [:index, :show, :create, :destroy]
     
+    # fetch all likes for the current user
     def index
         @likes = Like.where(channel_id: current_user.channel.id)
         render :index
     end
     
+    # create a like for the current user
     def create
         params[:like][:channel_id] = current_user.channel.id
         @like = Like.new(like_params)
-        # debugger
 
         if @like.save
             render :show
