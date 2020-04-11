@@ -10,23 +10,44 @@ export default class Likes extends Component {
     }
 
     handleLike(dislike) {
-        const userLikeId = this.props.userLikeId;
-        
+        const userLikeId = this.props.userLikeId,
+            addLikeCount = this.props.addLikeCount,
+            addDislikeCount = this.props.addDislikeCount;
+        // debugger
         return () => {
             if (!userLikeId) {
-                this.handleCreateLike(dislike);
-            } else if (this.props.likes[userLikeId].dislike === dislike) {
-                this.props.destroyLike(userLikeId);
-            } else {
-                this.props.destroyLike(userLikeId).then(() => {
-                    this.handleCreateLike(dislike);
+                this.handleCreateLike(dislike)
+                .then(() => {
+                    // debugger
+                    if (dislike) addDislikeCount(this.props.videoId, 1);
+                    else addLikeCount(this.props.videoId, 1);
                 });
+            } else if (this.props.likes[userLikeId].dislike === dislike) {
+                this.props.destroyLike(userLikeId)
+                .then(() => {
+                    if (dislike) addDislikeCount(this.props.videoId, -1);
+                    else addLikeCount(this.props.videoId, -1);
+                })
+            } else {
+                this.props.destroyLike(userLikeId)
+                .then(() => {
+                    this.handleCreateLike(dislike);
+                })
+                .then(() => {
+                    if (dislike) {
+                        addDislikeCount(this.props.videoId, 1);
+                        addLikeCount(this.props.videoId, -1);
+                    } else {
+                        addDislikeCount(this.props.videoId, -1);
+                        addLikeCount(this.props.videoId, 1);
+                    }
+                })
             }
         }
     }
 
     handleCreateLike(dislike) {
-        this.props.createLike({
+        return this.props.createLike({
             like: {
                 likableType: "Video",
                 likableId: this.props.videoId,

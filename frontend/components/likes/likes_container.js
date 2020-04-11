@@ -1,11 +1,9 @@
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { createLike, destroyLike } from "../../actions/likes";
+import { createLike, destroyLike, fetchAllUserLikes } from "../../actions/likes";
+import { addDislikeCount, addLikeCount } from "../../actions/videos";
 import { selectVideo } from "../../reducers/selectors";
-import { fetchAllUserLikes } from "../../actions/likes";
-
-import Likes from "./likes"
-
+import Likes from "./likes";
 
 const mapStateToProps = (state, { match }) => {
     // debugger
@@ -19,11 +17,13 @@ const mapStateToProps = (state, { match }) => {
         likes: state.entities.likes,
     }
 }
+
 const mapDispatchToProps = dispatch => ({
     fetchAllUserLikes: () => dispatch(fetchAllUserLikes()),
     createLike: like => dispatch(createLike(like)),
     destroyLike: likeId => dispatch(destroyLike(likeId)),
+    addLikeCount: (videoId, amount) => dispatch(addLikeCount(videoId, amount)),
+    addDislikeCount: (videoId, amount) => dispatch(addDislikeCount(videoId, amount)),
 });
-
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Likes));

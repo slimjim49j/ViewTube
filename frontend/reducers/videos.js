@@ -1,9 +1,11 @@
-import { RECEIVE_VIDEO, RECEIVE_ALL_VIDEOS } from "../actions/videos";
+import { RECEIVE_VIDEO, RECEIVE_ALL_VIDEOS, ADD_LIKE_COUNT, ADD_DISLIKE_COUNT } from "../actions/videos";
 import { RECEIVE_ALL_USER_LIKES, RECEIVE_LIKE, REMOVE_LIKE } from "../actions/likes";
 
 export default (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
+
+
     switch (action.type) {
         case RECEIVE_ALL_VIDEOS:
             return action.videos;
@@ -33,6 +35,15 @@ export default (state = {}, action) => {
                 const videoId = action.like.likableId;
                 nextState[videoId].userLikeId = null;
             }
+            return nextState;
+
+
+        case ADD_LIKE_COUNT:
+            nextState[action.videoId].likeCount += action.amount;
+            return nextState;
+
+        case ADD_DISLIKE_COUNT:
+            nextState[action.videoId].dislikeCount += action.amount;
             return nextState;
 
         default:
