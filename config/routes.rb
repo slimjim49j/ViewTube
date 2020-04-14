@@ -4,8 +4,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:create, :show]
-    resources :videos
+    resources :videos do 
+      resources :comments, only: [:index]
+    end
     resources :likes, only: [:index, :create, :destroy]
+    resources :comments, only: [:create]
 
   end
   

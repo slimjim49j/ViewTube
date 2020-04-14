@@ -15,7 +15,7 @@ class Api::VideosController < ApplicationController
 
     def create
         # set the video's channel to the current user's channel
-        params[:video][:channel_id] = current_user.channel.id;
+        params[:video][:channel_id] = current_user.channel.id
         @video = Video.new(video_params);
 
         if @video.save
