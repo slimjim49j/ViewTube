@@ -1,4 +1,5 @@
 @comments.each do |comment|
-    json.partial! "comment", comment: comment
-    json.channel_name 
+    json.set! comment.id do
+        json.partial! "comment", comment: comment
+    end
 end

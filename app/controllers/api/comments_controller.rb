@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
     
     def index
-        @comments = Comment.where(video_id: params[:id]).includes(:channel)
+        @comments = Comment.where(video_id: params[:video_id]).includes(:channel)
         render :index
     end
     
