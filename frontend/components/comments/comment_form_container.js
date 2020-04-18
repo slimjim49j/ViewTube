@@ -1,17 +1,16 @@
 import { createComment } from "../../actions/comments";
 import { connect } from "react-redux";
-import Comments from "./comments"
+import CommentForm from "./comment_form";
 
 const mapStateToProps = (state) => {
     return {
-        comments: state.entities.comments,
-    }
+    };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         createComment: comment => dispatch(createComment(comment)),
-    }
+    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Comments);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

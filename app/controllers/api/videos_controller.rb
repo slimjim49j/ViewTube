@@ -3,7 +3,11 @@ class Api::VideosController < ApplicationController
     
     def index
         # debugger
-        @videos = Video.includes(:likes).all
+        if (params[:video][:search].blank?) 
+            @videos = Video.includes(:likes).all
+        else
+            @videos = Video.search(params[:video][:search])
+        end
         render :index
     end
     

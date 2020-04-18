@@ -7,6 +7,8 @@ import Likes from "./likes";
 
 const mapStateToProps = (state, { match }) => {
     // debugger
+    // like count necessary? already passed into container
+    // clean up other stuff
     const videoId = parseInt(match.params.id);
     const video = selectVideo(state.entities.videos, videoId);
     const userLikeId = video.userLikeId;

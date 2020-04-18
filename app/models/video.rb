@@ -11,4 +11,8 @@ class Video < ApplicationRecord
     has_many :comments,
         foreign_key: :video_id,
         class_name: :Comment
+
+    def self.search(search_str)
+        Video.where("title LIKE :search", search: "%#{search_str}%")
+    end
 end

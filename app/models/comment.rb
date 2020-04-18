@@ -1,6 +1,7 @@
 class Comment < ApplicationRecord
     # belongs to: channel, video, parent comment
     # can have: likes
+    validates :body, length: {minimum: 1}
 
     belongs_to :channel,
         foreign_key: :channel_id,

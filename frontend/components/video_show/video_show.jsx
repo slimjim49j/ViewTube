@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Video from "./video";
 import MetaInfo from "./meta_info";
-import CommentsContainer from "../comments/comments_container";
+import Comments from "../comments/comments";
 import RecommendationsContainer from "../recommendations/recommendations_container";
 
 class VideoShow extends Component {
@@ -36,7 +36,6 @@ class VideoShow extends Component {
     render() {
         // debugger
 
-        // debugger
         return (
             <div className="video-show">
                 <div className="video-content-wrapper">
@@ -50,7 +49,7 @@ class VideoShow extends Component {
                         video={this.props.video}
                     />
 
-                    <CommentsContainer videoId={this.props.videoId} />
+                    <Comments videoId={this.props.videoId} />
 
                     <RecommendationsContainer/>
                 </div>
