@@ -13,7 +13,7 @@ export default class Likes extends Component {
         const userLikeId = this.props.userLikeId,
             addLikeCount = this.props.addLikeCount,
             addDislikeCount = this.props.addDislikeCount;
-        // debugger
+
         return () => {
             if (!userLikeId) {
                 this.handleCreateLike(dislike)
@@ -70,15 +70,26 @@ export default class Likes extends Component {
                 </path></g>
             </svg>
         )
+
+        const userLikeId = this.props.userLikeId,
+            likes = this.props.likes;
         
         return (
             <div>
                 <div className="video-btn-container">
-                    <button id="like-btn" onClick={this.handleLike(false)}>
+                    <button 
+                        id="like-btn"
+                        className={userLikeId && likes[userLikeId] && likes[userLikeId].dislike === false ? "active-like-btn" : ""}
+                        onClick={this.handleLike(false)}
+                    >
                         {likeSvg}
                     </button>
                     <span>{this.props.likeCount}</span>
-                    <button id="dislike-btn" onClick={this.handleLike(true)}>
+                    <button 
+                        id="dislike-btn"
+                        className={userLikeId && likes[userLikeId] && likes[userLikeId].dislike === true ? "active-like-btn" : ""}
+                        onClick={this.handleLike(true)}
+                    >
                         {dislikeSvg}
                     </button>
                     <span>{this.props.dislikeCount}</span>

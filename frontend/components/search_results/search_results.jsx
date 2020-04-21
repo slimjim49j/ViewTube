@@ -20,7 +20,7 @@ class SearchResults extends Component {
     render() {
         // debugger;
         return (
-            <div>
+            <div className="home-vid-container">
                 {/* <ul> */}
                     {
                         this.props.videos ? (
@@ -29,11 +29,26 @@ class SearchResults extends Component {
                                     <video 
                                         src={video.video}
                                         preload="metadata"
+                                        muted={true}
                                         onMouseOver={e => e.currentTarget.play()}
                                         onMouseOut={e => e.currentTarget.pause()}
                                     >
                                     </video>
-                                    {video.title}
+                                    <div className="video-preview-info">
+                                        <div>
+                                            <img
+                                                src="https://4.bp.blogspot.com/-H232JumEqSc/WFKY-6H-zdI/AAAAAAAAAEw/DcQaHyrxHi863t8YK4UWjYTBZ72lI0cNACLcB/s1600/profile%2Bpicture.png"
+                                                className="channel-img"
+                                            />
+                                        </div>
+                                        <div>
+                                            <h4>{video.title}</h4>
+                                            <p className="subtext">{video.channelTitle}</p>
+                                            <p className="subtext">{video.createdAt.slice(0, 10)}</p>
+                                        </div>
+
+
+                                    </div>
                                 </Link>
                             ))
                         ) : <p>no videos</p>

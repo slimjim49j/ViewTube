@@ -11,11 +11,11 @@ class Home extends Component {
     }
 
     play(e) {
-        e.currentTarget.play();
+        e.currentTarget.querySelector("video").play();
     }
 
     pause(e) {
-        e.currentTarget.pause();
+        e.currentTarget.querySelector("video").pause();
     }
 
     render() {
@@ -24,12 +24,17 @@ class Home extends Component {
                 <main className="home-vid-container">
                     {this.props.videos ? (
                         Object.values(this.props.videos).map( video => (
-                            <Link to={`video/${video.id}`} className="home-vid" key={video.id}>
+                            <Link 
+                                to={`video/${video.id}`}
+                                className="home-vid"
+                                key={video.id}
+                                onMouseOver={this.play}
+                                onMouseOut={this.pause}
+                            >
                                 <video 
                                     src={video.video}
                                     preload="metadata"
-                                    onMouseOver={this.play} 
-                                    onMouseOut={this.pause}
+                                    muted={true}
                                 >
                                 </video>
                                 <div className="video-preview-info">
