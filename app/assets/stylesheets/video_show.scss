@@ -1,5 +1,6 @@
 .video-show {
     video {
+        display: block;
         width: 100%;
     }
     
@@ -23,6 +24,30 @@
     padding-bottom: 15px;
     
     
+}
+
+.video-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video-btn-container {
+    button {
+        background-color: transparent;
+        border: none;
+        padding: 8px;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: gray;
+    }
+}
+
+#dislike-btn {
+    // transform: rotate(180deg);
 }
 
 #views-and-date {

@@ -23,15 +23,15 @@ export const addLikeCount = (videoId, amount) => ({
 });
 
 export const addDislikeCount = (videoId, amount) => ({
-  type: ADD_DISLIKE_COUNT,
-  videoId,
-  amount,
+    type: ADD_DISLIKE_COUNT,
+    videoId,
+    amount,
 });
 
 export const fetchVideo = id => dispatch => getVideo(id)
     .then( video => dispatch(receiveVideo(video)))
 
-export const fetchAllVideos = () => dispatch => getAllVideos()
+export const fetchAllVideos = search => dispatch => getAllVideos(search)
     .then(videos => dispatch(receiveAllVideos(videos)))
 
 export const createNewVideo = formVideo => dispatch => postVideo(formVideo)

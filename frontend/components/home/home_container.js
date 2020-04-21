@@ -4,10 +4,11 @@ import { fetchAllVideos } from "../../actions/videos";
 
 const mapStateToProps = state => ({
     videos: state.entities.videos,
+    channels: state.entities.channels,
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchAllVideos: () => dispatch(fetchAllVideos()),
+    fetchAllVideos: search => dispatch(fetchAllVideos(search)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

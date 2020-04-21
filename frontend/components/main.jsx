@@ -5,6 +5,7 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import UploadModalContainer from "./upload_modal/upload_modal_container";
 import VideoShowContainer from "./video_show/video_show_container";
 import HomeContainer from "./home/home_container";
+import SearchResultsContainer from "./search_results/search_results_container";
 
 export default props => (
     <div>
@@ -14,6 +15,7 @@ export default props => (
         <Switch>
             <Route path="/channel/:id" component={ChannelShowContainer} />
             <Route path="/video/:id" component={VideoShowContainer} />
+            <Route path="/search" component={SearchResultsContainer} />
             <Route path="/" component={HomeContainer} />
             <Redirect to="/" />
         </Switch>

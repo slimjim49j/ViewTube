@@ -15,7 +15,7 @@ export default ({ currentUser, logout, receiveModalStatus }) => {
             </button>
 
             {/* logout */}
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-btn" onClick={logout}>Log Out</button>
         </div>
     ) : (
         <div className="right-nav">

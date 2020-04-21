@@ -15,7 +15,7 @@ export default (props) => {
             <div className="primary-info">
 
                 <h1>{videoTitle}</h1>
-                <div >
+                <div className="video-info">
                     <p id="views-and-date" className="subtext"># views • {uploadDate}</p>
                     <div>
                         <LikesContainer userLikeId={userLikeId} likeCount={likeCount} dislikeCount={dislikeCount} />

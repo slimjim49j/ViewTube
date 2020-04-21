@@ -4,7 +4,7 @@ class Api::VideosController < ApplicationController
     def index
         # debugger
         if (params[:video][:search].blank?) 
-            @videos = Video.includes(:likes).all
+            @videos = Video.includes(:likes, :channel).all
         else
             @videos = Video.search(params[:video][:search])
         end

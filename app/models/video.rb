@@ -13,6 +13,6 @@ class Video < ApplicationRecord
         class_name: :Comment
 
     def self.search(search_str)
-        Video.where("title LIKE :search", search: "%#{search_str}%")
+        Video.where("LOWER(title) LIKE LOWER(:search)", search: "%#{search_str}%")
     end
 end

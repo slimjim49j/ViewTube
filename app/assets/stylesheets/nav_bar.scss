@@ -7,6 +7,7 @@ header {
     box-sizing: border-box;
 
     top: 0;
+    z-index: 1;
     
     height: 56px;
     width: 100%;
@@ -51,6 +52,15 @@ header {
 
 .search-form {
     height: 32px;
+    width: 30%;
+    max-width: 750px;
+    min-width: 250px;
+    
+    display: flex;
+    flex-direction: row;
+    // flex: 1;
+
+    border: 1px solid lightgray;
 
     button, input {
         box-sizing: border-box;
@@ -58,7 +68,17 @@ header {
     }
 
     input {
-        width: 300px;
+        width: 100%;
+        padding: 1px 5px;
+        border: none;
+        border-right: 1px solid lightgray;
+    }
+
+    button {
+        background-color: rgb(245, 245, 245);
+        
+        width: 65px;
+        border: none;
     }
     
     svg {
@@ -67,6 +87,11 @@ header {
         height: 20px;
         width: 20px;
     }
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
 }
 
 .nav-btn {
@@ -110,4 +135,19 @@ header {
         font: 600 14px "Roboto", "Arial", sans-serif;
         text-decoration: none;
     }
+}
+
+.logout-btn {
+    color: rgb(93, 93, 93);
+    background-color: transparent;
+    
+    padding: 8px;
+    margin-right: 15px;
+    border: none;
+
+    font-weight: 700;
+}
+
+.logout-btn:hover {
+    background-color: rgba(228, 228, 228, 0.315);
 }

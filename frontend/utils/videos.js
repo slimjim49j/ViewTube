@@ -1,7 +1,12 @@
-export const getAllVideos = () => (
+export const getAllVideos = search => (
     $.ajax({
         url: "/api/videos",
-        method: "GET"
+        method: "GET",
+        data: {
+            video: {
+                search,
+            }
+        }
     })
 )
 
