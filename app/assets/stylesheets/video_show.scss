@@ -61,7 +61,8 @@
 }
 
 .secondary-info {
-    padding-top: 10px
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
 }
 
 .video-owner-info {
@@ -120,4 +121,115 @@
     font: 14px "Roboto", Arial, sans-serif;
 
     margin-left: 64px;
+}
+
+
+
+// comments
+
+.comment-form, [class^=reply-form] {
+    overflow: auto;
+    
+    padding-top: 10px;
+
+    textarea {
+        width: 100%;
+        padding: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid lightgray;
+        transition: border-bottom 0.3s ease-in-out;
+    }
+
+    textarea:focus {
+        outline: none;
+        border-bottom: 2px solid black;
+    }
+}
+
+.comment-btn-wrapper {
+    float: right;
+
+    margin-top: 3px;
+    
+    > * {
+        display: inline-block;
+    }
+
+    p, input[type=submit] {
+        font-size: 14px;
+    }
+    
+    p {
+        color: rgb(96, 96, 96);
+        
+        padding: 10px 16px;
+        margin: 0;
+    }
+
+    p:hover, input[type=submit]:hover {
+        cursor: pointer;
+    }
+
+    input[type=submit] {
+        color: white;
+        background-color: rgb(6, 95, 212);
+        font-weight: 700;
+
+        padding: 6px 12px;
+        border: none;
+        border-radius: 2px;
+    }
+}
+
+.comment-form {
+    padding: 10px 0 10px 5px;
+}
+
+[class^=reply-form] {
+    
+}
+
+.replies-container {
+    padding-left: 12px;
+    // border-left: 1px solid rgb(235, 235, 235);
+    
+}
+
+.comment-item {
+    box-shadow: -3px 0 3px rgba(0, 0, 0, 0.1);
+    padding: 10px 0 10px 12px;
+    
+    .comment-channel-title, .comment-created-at {
+        font-size: 13px;
+    }
+    
+    .comment-channel-title {
+        color: #030303;
+        font-weight: 700;
+
+        padding-right: 7px;
+    }
+
+    .comment-created-at {
+        color: #606060;
+    }
+
+    .comment-body {
+        font-size: 14px;
+        color: #030303;
+
+        margin: 7px 0;
+    }
+
+    .show-reply-btn {
+        background-color: transparent;
+        color: #606060;
+        font-size: 12px;
+        font-weight: 700;
+        
+        padding: 5px 5px 5px 0;
+        border: none;
+    }
 }

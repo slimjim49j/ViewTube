@@ -35,7 +35,7 @@ class CommentIndex extends Component {
                                 commentType="Reply"
                             />
                             
-                            <div>
+                            <div className="replies-container">
                                 {comment.replies.map(reply => (
                                     <div key={reply.id}>
                                         <CommentItem

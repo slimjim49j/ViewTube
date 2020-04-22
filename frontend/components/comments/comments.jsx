@@ -12,6 +12,7 @@ class Comments extends Component {
         return (
             <div>
                 {/* <CommentFormContainer videoId={this.props.videoId} parentCommentId={null} /> */}
+                <p className="num-comments">{`${this.props.commentsLength} Comments`}</p>
                 <CommentFormContainer
                     className={"comment-form"}
                     videoId={this.props.videoId}

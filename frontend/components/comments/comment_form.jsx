@@ -60,6 +60,7 @@ class CommentForm extends Component {
                         onChange={this.handleInput("body")}
                         onClick={this.handleClick}
                         value={this.state.body}
+                        placeholder={`Add a public ${this.props.commentType.toLowerCase()}...`}
                     >
                     </textarea>
                     <div className={"comment-btn-wrapper" + (this.props.commentType === "Comment" ? " hidden" : "") }>

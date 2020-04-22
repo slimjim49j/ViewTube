@@ -16,7 +16,7 @@ export default (props) => {
 
                 <h1>{videoTitle}</h1>
                 <div className="video-info">
-                    <p id="views-and-date" className="subtext"># views • {uploadDate}</p>
+                    <p id="views-and-date" className="subtext">{/*# views • */ uploadDate}</p>
                     <div>
                         <LikesContainer userLikeId={userLikeId} likeCount={likeCount} dislikeCount={dislikeCount} />
                         {/* <LikeContainer /> */}
@@ -33,12 +33,12 @@ export default (props) => {
                             <p className="subtext"># subscribers</p>
                         </div>
                     </div>
-                    <button id="subscribe">SUBSCRIBE</button>
+                    {/* <button id="subscribe">SUBSCRIBE</button> */}
                 </div>
                 <div className="description">
                     <p>{description}</p>
                     {/* <button>SHOW MORE</button> */}
-                    <p>profile pic, subscribe button, num views, and num subscribers still under construction</p>
+                    {/* <p>profile pic, subscribe button, num views, and num subscribers still under construction</p> */}
                 </div>
 
             </div>

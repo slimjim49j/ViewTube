@@ -13,9 +13,21 @@ class CommentItem extends Component {
 
     render() {
         return (
-            <div>
-                {this.props.comment.body}
-                <button onClick={this.handleClick} data-target={".reply-form-" + this.props.comment.id}>Reply</button>
+            <div className="comment-item">
+                <div>
+                    <span className="comment-channel-title">{this.props.comment.channelTitle}</span>
+                    <span className="comment-created-at">{this.props.comment.createdAt.slice(0, 10)}</span>
+                </div>
+                <p className="comment-body">
+                    {this.props.comment.body}
+                </p>   
+                <button
+                    className="show-reply-btn"
+                    onClick={this.handleClick}
+                    data-target={".reply-form-" + this.props.comment.id}
+                >
+                    Reply
+                </button>
                 <CommentFormContainer
                     className={ "reply-form-" + this.props.comment.id }
                     videoId={this.props.videoId}
