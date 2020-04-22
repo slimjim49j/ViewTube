@@ -10,7 +10,6 @@ class Api::CommentsController < ApplicationController
     def create
         params[:comment][:channel_id] = current_user.channel.id
         @comment = Comment.new(comment_params)
-        debugger;
 
         if @comment.save
             render :show
