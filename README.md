@@ -18,5 +18,4 @@ ViewTube is a clone of YouTube that allows for video upload and playback. Users 
 
 ### Main Features
 
-
-The main features of this site currently include user authentication, video upload, and video playback.
+![Video Search](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/search_results.png) 
