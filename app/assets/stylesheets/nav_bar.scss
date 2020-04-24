@@ -32,7 +32,7 @@ header {
     text-decoration: none;
     color: black;
 
-    margin-left: 15px;
+    // margin-left: 15px;
     
     > * {
         display: inline-block;
@@ -154,4 +154,50 @@ header {
 
 .logout-btn:hover {
     background-color: rgba(228, 228, 228, 0.315);
+}
+
+
+// sidebar
+#sidebar-btn {
+    background-color: white;
+    position: relative;
+}
+
+// #sidebar-btn:hover span {
+//     display: inline-block;
+// }
+
+.sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+    top: 15px;
+    left: -10px;
+    
+    height: 100vw;
+
+    :first-child {
+        margin-top: 10px;
+    }
+    
+    a {
+        // box-sizing: border-box;
+        padding: 10px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    a:hover {
+        background-color: lightgray;
+    }
+    
+    // span {
+    //     display: none;
+    //     transition: display 1s ease-in;
+    // }
+    
+    svg {
+        display: inline-block;
+    }
 }
