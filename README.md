@@ -8,12 +8,12 @@ ViewTube is a clone of YouTube that allows for video upload and playback. Users 
 
 This project is facilitated via Ruby on Rails and Postgresql on the backend, with React/Redux on the frontend. Videos are stored on AWS S3 using the Active Storage gem.
 
-** Backend: **
+#### Backend:
 - Ruby on Rails
 - PostgreSQL
 - AWS S3
 
-** Frontend: **
+#### Frontend:
 - React
 - Redux
 
