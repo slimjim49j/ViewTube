@@ -18,4 +18,13 @@ ViewTube is a clone of YouTube that allows for video upload and playback. Users 
 
 ### Main Features
 
-![Video Search](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/search_results.png) 
+#### Video Search
+![Video Search](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/search_results.png)
+Users can search for videos
+
+#### Video Playback, Likes
+![Video Playback, Likes](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/video_show.png)
+
+#### Comments
+![Comments](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/video_comment.png)
+
