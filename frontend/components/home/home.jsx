@@ -59,7 +59,7 @@ class Home extends Component {
                                 data-id={video.id}
                             >
                                 <video 
-                                    src={video.video}
+                                    src={`${video.video}#t=5`}
                                     preload="metadata"
                                     muted={true}
                                 >
