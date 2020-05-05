@@ -6,6 +6,7 @@ import UploadModalContainer from "./upload_modal/upload_modal_container";
 import VideoShowContainer from "./video_show/video_show_container";
 import HomeContainer from "./home/home_container";
 import SearchResultsContainer from "./search_results/search_results_container";
+import ErrorPopupContainer from "./error_popup/error_popup_container";
 
 export default props => (
     <div>
@@ -19,5 +20,7 @@ export default props => (
             <Route path="/" component={HomeContainer} />
             <Redirect to="/" />
         </Switch>
+
+        <ErrorPopupContainer />
     </div>
 )

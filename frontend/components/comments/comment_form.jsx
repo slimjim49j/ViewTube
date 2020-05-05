@@ -29,6 +29,11 @@ class CommentForm extends Component {
         } else {
             if (e.target.tagName.toLowerCase() === "textarea") {
                 // if user not signed in redirect to signin
+                if (!this.props.signedIn) {
+                    this.props.receiveErrorPopupStatus(true);
+                    return;
+                }
+                
                 const commentBtnWrapper = document.querySelector(`.${this.props.className} .comment-btn-wrapper`);
                 commentBtnWrapper.classList.remove("hidden");
             } else {

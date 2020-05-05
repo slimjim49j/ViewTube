@@ -4,6 +4,7 @@ import { createLike, destroyLike, fetchAllUserLikes } from "../../actions/likes"
 import { addDislikeCount, addLikeCount } from "../../actions/videos";
 import { selectVideo } from "../../reducers/selectors";
 import Likes from "./likes";
+import { receiveErrorPopupStatus } from "../../actions/ui";
 
 const mapStateToProps = (state, { match }) => {
     // debugger
@@ -17,6 +18,7 @@ const mapStateToProps = (state, { match }) => {
         videoId,
         likeCount: video.likeCount,
         likes: state.entities.likes,
+        signedIn: !!state.session.id,
     }
 }
 
@@ -26,6 +28,7 @@ const mapDispatchToProps = dispatch => ({
     destroyLike: likeId => dispatch(destroyLike(likeId)),
     addLikeCount: (videoId, amount) => dispatch(addLikeCount(videoId, amount)),
     addDislikeCount: (videoId, amount) => dispatch(addDislikeCount(videoId, amount)),
+    receiveErrorPopupStatus: status => dispatch(receiveErrorPopupStatus(status)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Likes));

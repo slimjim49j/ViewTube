@@ -15,6 +15,12 @@ export default class Likes extends Component {
             addDislikeCount = this.props.addDislikeCount;
 
         return () => {
+            if (!this.props.signedIn) {
+                this.props.receiveErrorPopupStatus(true);
+                return;
+            }
+            
+            // could've been done with radio buttons
             if (!userLikeId) {
                 this.handleCreateLike(dislike)
                 .then(() => {
