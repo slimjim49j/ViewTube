@@ -37,7 +37,7 @@ class Signup extends React.Component {
                     }
                 })
             })
-            .then( () => this.props.history.push("/"))
+            .then(() => this.props.history.push(this.props.destination ? this.props.destination : "/"))
             .fail(fail => this.props.receiveSessionErrors(fail.responseJSON));
             //change redirect?
     }
@@ -191,7 +191,9 @@ class Signup extends React.Component {
                             </div>
                         </div>
                         <div className="link-wrapper">
-                            <Link to="/login" >Login instead</Link>
+                            <Link to={"/login" + (this.props.destination ? `?destination=${this.props.destination}` : "")}>
+                                Login instead
+                            </Link>
                             <button onClick={this.handleSubmit}>Next</button> {/* change to onsubmit?*/}
                         </div>
                     </div>

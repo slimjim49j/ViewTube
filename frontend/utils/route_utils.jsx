@@ -6,10 +6,11 @@ import {
     withRouter 
 } from "react-router-dom";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     // debugger;
     return {
-        loggedIn: Boolean(state.session.id)
+        loggedIn: Boolean(state.session.id),
+
     }
 };
 

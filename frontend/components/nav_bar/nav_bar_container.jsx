@@ -1,12 +1,12 @@
-import React from "react";
 import { connect } from "react-redux";
-
-import NavBar from "./nav_bar";
+import { withRouter } from "react-router-dom";
 import { logout } from "../../actions/session";
-import { receiveUploadModalStatus } from "../../actions/ui"
+import { receiveUploadModalStatus } from "../../actions/ui";
+import NavBar from "./nav_bar";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
+    path: (ownProps.location.pathname + ownProps.location.search),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
     receiveModalStatus: status => dispatch(receiveUploadModalStatus(status)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

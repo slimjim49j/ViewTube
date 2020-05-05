@@ -6,9 +6,13 @@ import {
 import Signup from "./signup";
 import { createChannel } from "../../actions/channels";
 
-const mapStateToProps = (state) => ({
-    errors: state.errors.session,
-})
+const mapStateToProps = (state, ownProps) => {
+
+    return {
+        errors: state.errors.session,
+        destination: new URLSearchParams(ownProps.location.search).get("destination") || "",
+    }
+}
 
 const mapDispatchToProps = dispatch => ({
     createNewUser: formUser => dispatch(createNewUser(formUser)),

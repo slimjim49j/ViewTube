@@ -22,7 +22,7 @@ class Login extends React.Component {
         //add error checking
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push("/")) 
+            .then(() => this.props.history.push(this.props.destination ? this.props.destination : "/")) 
             .fail(fail => this.failCallback(fail));
             //change redirect?
     }
@@ -30,7 +30,7 @@ class Login extends React.Component {
     demoUser(e) {
         e.preventDefault();
         this.props.login({email: "demouser1", password: "demouser1",})
-            .then(() => this.props.history.push("/"))
+            .then(() => this.props.history.push(this.props.destination ? this.props.destination : "/"))
             .fail(fail => this.failCallback(fail));
     }
 
@@ -133,7 +133,9 @@ class Login extends React.Component {
                             </div>
                         </div>
                         <div className="link-wrapper">
-                            <Link to="/signup">Create account</Link>
+                            <Link to={"/signup" + (this.props.destination ? `?destination=${this.props.destination}` : "")}>
+                                Create account
+                            </Link>
                             <div>
                                 <button onClick={this.demoUser}>Demo User</button>
                                 <button onClick={this.handleSubmit}>Next</button> {/* change to onsubmit?*/}

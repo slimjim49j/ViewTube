@@ -5,9 +5,13 @@ import {
 } from "../../actions/session";
 import Login from "./login";
 
-const mapStateToProps = (state) => ({
-    errors: state.errors.session,
-});
+const mapStateToProps = (state, ownProps) => {
+    // debugger
+    return {
+        errors: state.errors.session,
+        destination: new URLSearchParams(ownProps.location.search).get("destination") || "",
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     login: user => dispatch(login(user)),
