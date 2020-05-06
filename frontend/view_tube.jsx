@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import { postUser, postSession, deleteSession } from "./utils/session"; //testing
+// import { postUser, postSession, deleteSession } from "./utils/session"; //testing
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDOM.render(<Root store={store} />, root);
 
     //testing
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
     
-    window.postUser = postUser
-    window.postSession = postSession
-    window.deleteSession = deleteSession
+    // window.postUser = postUser
+    // window.postSession = postSession
+    // window.deleteSession = deleteSession
 })

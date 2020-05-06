@@ -68,7 +68,7 @@ class Signup extends React.Component {
             </svg>
         )
         return (
-            <div className="form-wrapper">
+            <div className="form-wrapper signup-container">
                 <form>
                     <div>
                         <svg viewBox="0 0 75 24" width="75" height="24" xmlns="http://www.w3.org/2000/svg">
