@@ -180,7 +180,7 @@ class Signup extends React.Component {
                                     ) : null}
                                 </div>
                             </div>
-                            <div className="field">
+                            {/* <div className="field">
                                 <label htmlFor="confirm"><span>Confirm</span></label>
                                 <input
                                     id="confirm"
@@ -188,7 +188,7 @@ class Signup extends React.Component {
                                     value={this.state.confirm}
                                     onChange={this.handleInput("confirm")}
                                     />
-                            </div>
+                            </div> */}
                         </div>
                         <div className="link-wrapper">
                             <Link to={"/login" + (this.props.destination ? `?destination=${this.props.destination}` : "")}>
