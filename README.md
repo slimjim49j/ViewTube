@@ -2,7 +2,7 @@
 
 [Link to Live Youtube Clone](https://viewtube-clone.herokuapp.com)
 
-ViewTube is a clone of YouTube that allows for video upload and playback. Users can search for videos, as well as like and comment on videos.
+ViewTube is a clone of YouTube, which aims to provide a platform for people to upload and view videos while allowing for interaction and feedback tbrough comments and likes.
 
 ### Technologies Used
 
