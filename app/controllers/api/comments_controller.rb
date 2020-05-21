@@ -18,8 +18,33 @@ class Api::CommentsController < ApplicationController
         end
     end
 
+    def update
+        @comment = selected_comment
+        if @comment && @comment.update(comment_params)
+            render :show
+        elsif !@comment
+            render json: ['Could not locate comment'], status: 400
+        else
+            render json: @comment.errors.full_messages, status: 401
+        end
+    end
+
+    def delete
+        @comment = selected_comment
+        if @comment
+            @comment.destroy
+            render :show
+        else
+            render json: ['Could not locate comment'], status: 400
+        end
+    end
+
     private
     def comment_params
         params.require(:comment).permit(:body, :channel_id, :video_id, :parent_comment_id)
+    end
+
+    def selected_comment
+        Comment.find(params[:id])
     end
 end
