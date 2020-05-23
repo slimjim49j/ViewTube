@@ -12,3 +12,18 @@ export const postComment = comment => (
         data: comment
     })
 )
+
+export const patchComment = (commentId, comment) => (
+    $.ajax({
+        url: `/api/comments/${commentId}`,
+        method: "PATCH",
+        data: comment
+    })
+)
+
+export const deleteComment = commentId => (
+    $.ajax({
+        url: `/api/comments/${commentId}`,
+        method: "DELETE"
+    })
+)

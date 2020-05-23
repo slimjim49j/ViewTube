@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
     
     def index
-        @comments = Comment.where(video_id: params[:video_id]).includes(:channel)
+        @comments = Comment.where(video_id: params[:video_id]).includes(:channel, :user)
         render :index
     end
     
@@ -29,7 +29,7 @@ class Api::CommentsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @comment = selected_comment
         if @comment
             @comment.destroy

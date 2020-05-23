@@ -22,4 +22,7 @@ class Comment < ApplicationRecord
     
     has_many :likes,
         as: :likable
+
+    has_one :user,
+        through: :channel
 end

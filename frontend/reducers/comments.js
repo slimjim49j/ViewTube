@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT } from "../actions/comments";
+import { RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from "../actions/comments";
 
 const initialState = {
 
@@ -15,6 +15,10 @@ export default (state = initialState, action) => {
 
     case RECEIVE_COMMENT:
         nextState[action.comment.id] = action.comment;
+        return nextState;
+
+    case REMOVE_COMMENT:
+        delete nextState[action.commentId];
         return nextState;
 
     default:

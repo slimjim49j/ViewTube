@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:create, :show]
     resources :videos do 
-      resources :comments, only: [:index, :update, :destroy]
+      resources :comments, only: [:index]
     end
     resources :likes, only: [:index, :create, :destroy]
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :update, :destroy]
 
   end
   

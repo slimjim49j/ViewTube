@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentFormContainer from "./comment_form_container";
-import CommentItem from "./comment_item";
+import CommentItemContainer from './comment_item_container';
 
 class CommentIndex extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class CommentIndex extends Component {
                 {
                     Object.values(formattedComments).map(comment => (
                         <div key={comment.id}>
-                            <CommentItem
+                            <CommentItemContainer
                                 videoId={this.props.videoId}
                                 parentCommentId={comment.id}
                                 comment={comment}
@@ -38,7 +38,7 @@ class CommentIndex extends Component {
                             <div className="replies-container">
                                 {comment.replies.map(reply => (
                                     <div key={reply.id}>
-                                        <CommentItem
+                                        <CommentItemContainer
                                             videoId={this.props.videoId}
                                             parentCommentId={comment.id}
                                             comment={reply}
