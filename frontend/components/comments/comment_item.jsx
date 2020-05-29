@@ -6,6 +6,7 @@ class CommentItem extends Component {
         super(props);
         this.state = {
             edit: false,
+            editText: props.comment.body,
         }
 
         this.handleEditClick = this.handleEditClick.bind(this);
@@ -49,18 +50,17 @@ class CommentItem extends Component {
         return (
             <div className="comment-item">
                 { this.state.edit ? (
-                    <form onSubmit={this.handleEditSubmit}>
+                    <form className="edit-form" onSubmit={this.handleEditSubmit}>
                         <textarea
                             name=""
                             id=""
-                            cols="30"
-                            rows="10"
                             onChange={this.handleInput("editText")}
                             value={this.state.editText}
-                            defaultValue={comment.body}
                         ></textarea>
-                        <button onClick={this.handleCancelClick}>Cancel</button>
-                        <input type="submit" value="Save"/>
+                        <div className="edit-btn-wrapper">
+                            <button className="cancel-btn btn" onClick={this.handleCancelClick}>Cancel</button>
+                            <input className="submit-btn btn" type="submit" value="Save"/>
+                        </div>
                     </form>
                 ) : (
                     <>
@@ -73,7 +73,7 @@ class CommentItem extends Component {
                     </p>
                     <div>
                         <button
-                            className="show-reply-btn"
+                            className="show-reply-btn btn"
                             onClick={this.handleReplyClick}
                             data-target={".reply-form-" + comment.id}
                         >
@@ -81,8 +81,8 @@ class CommentItem extends Component {
                         </button>
                         { comment.userId === this.props.currentUserId ? (
                             <>
-                            <button onClick={this.handleEditClick}>Edit</button>
-                            <button onClick={this.handleDeleteClick}>Delete</button>
+                            <button className="btn" onClick={this.handleEditClick}>Edit</button>
+                            <button className="btn" onClick={this.handleDeleteClick}>Delete</button>
                             </>
                         ) : null }
                     </div>
