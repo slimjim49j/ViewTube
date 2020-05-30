@@ -44,6 +44,13 @@ class CommentForm extends Component {
         }
 
     }
+
+    handleKeyPress(e) {
+        if (e.which === 13 && !e.shiftKey) {
+            e.target.form.dispatchEvent(new Event("submit", { cancelable: true }));
+            e.preventDefault(); // Prevents the addition of a new line in the text field (not needed in a lot of cases)
+        }
+    }
     
     handleSubmit(e) {
         e.preventDefault();
@@ -65,6 +72,7 @@ class CommentForm extends Component {
                         cols="30" rows="1" 
                         onChange={this.handleInput("body")}
                         onClick={this.handleClick}
+                        onKeyPress={this.handleKeyPress}
                         value={this.state.body}
                         placeholder={`Add a public ${this.props.commentType.toLowerCase()}...`}
                     >

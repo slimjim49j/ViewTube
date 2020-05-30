@@ -18,6 +18,16 @@ export default (state = initialState, action) => {
         return nextState;
 
     case REMOVE_COMMENT:
+        
+        // get rid of replies to the soon to be deleted comment
+        if (!nextState[action.commentId].parentCommentId) {
+            for (let key in nextState) {
+                if (nextState[key].parentCommentId === action.commentId) {
+                    delete nextState[key];
+                }
+            }
+        }
+        
         delete nextState[action.commentId];
         return nextState;
 
