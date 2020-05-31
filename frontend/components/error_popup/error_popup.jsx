@@ -10,7 +10,7 @@ class ErrorPopup extends Component {
     componentDidUpdate() {
         const status = this.props.errorPopupStatus;
         if (status) {
-            // setTimeout(() => (this.props.receiveErrorPopupStatus(false)), 7000);
+            setTimeout(() => (this.props.receiveErrorPopupStatus(false)), 10000);
         }
     }
 
