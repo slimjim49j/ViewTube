@@ -11,16 +11,47 @@
     background-color: #ffffff;
     box-shadow: 0 0 10px black;
 
-    svg {
-        height: 25px;
-        width: 25px;
-        fill: gray;
-        margin-right: 10px;
-    }
+    // svg {
+    //     height: 25px;
+    //     width: 25px;
+    //     fill: gray;
+    //     margin-right: 10px;
+    // }
     
     p {
         display: flex;
         align-items: center;
         padding: 8px 15px;
     }
+}
+
+
+// close button
+
+.close {
+  position: relative;
+//   right: 32px;
+//   top: 32px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 9px;
+  content: ' ';
+  height: 21px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
