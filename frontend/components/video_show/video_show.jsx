@@ -10,19 +10,6 @@ class VideoShow extends Component {
         this.checkVideoInfo = this.checkVideoInfo.bind(this);
     }
 
-    // updateState(slice, id, fetchItem) {
-    //     // if specific item isn't in global state, fetch item
-    //     if (!slice[id]) {
-    //         // debugger
-    //         fetchItem(id);
-    //     }
-    //     // abstraction for:
-    //     // if(!this.props.channels[this.props.channelId]) {
-    //     //     // debugger
-    //     //     this.props.fetchChannel(this.props.channelId);
-    //     // }
-    // }
-
     checkVideoInfo() {
         if (!this.props.videos[this.props.videoId]) {
             this.props.fetchVideo(this.props.videoId)
@@ -39,10 +26,6 @@ class VideoShow extends Component {
                 <div className="video-content-wrapper">
                     <Video src={this.props.video.video} />
                     <MetaInfo
-                        /*likeCount={this.props.video.likeCount}
-                        videoTitle={this.props.video.title}
-                        uploadDate={this.props.video.createdAt.slice(0, 10)}
-                        description={this.props.video.description}*/
                         channelTitle={this.props.channel.title}
                         video={this.props.video}
                     />
