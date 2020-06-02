@@ -22,7 +22,7 @@ class CommentItem extends Component {
             const replyForm = document.querySelector(e.target.dataset.target);
             replyForm.classList.remove("hidden");
         } else {
-            this.props.recieveErrorPopupStatus(true);
+            this.props.receiveErrorPopupStatus(true);
         }
     }
 
