@@ -7,35 +7,32 @@ import RecommendationsContainer from "../recommendations/recommendations_contain
 class VideoShow extends Component {
     constructor(props) {
         super(props);
+        this.checkVideoInfo = this.checkVideoInfo.bind(this);
     }
 
-    updateState(slice, id, fetchItem) {
-        // if specific item isn't in global state, fetch item
-        if (!slice[id]) {
-            // debugger
-            fetchItem(id);
+    // updateState(slice, id, fetchItem) {
+    //     // if specific item isn't in global state, fetch item
+    //     if (!slice[id]) {
+    //         // debugger
+    //         fetchItem(id);
+    //     }
+    //     // abstraction for:
+    //     // if(!this.props.channels[this.props.channelId]) {
+    //     //     // debugger
+    //     //     this.props.fetchChannel(this.props.channelId);
+    //     // }
+    // }
+
+    checkVideoInfo() {
+        if (!this.props.videos[this.props.videoId]) {
+            this.props.fetchVideo(this.props.videoId)
+        } else if (!this.props.channels[this.props.channelId]) {
+            this.props.fetchChannel(this.props.channelId);
         }
-        // abstraction for:
-        // if(!this.props.channels[this.props.channelId]) {
-        //     // debugger
-        //     this.props.fetchChannel(this.props.channelId);
-        // }
-    }
-
-    componentDidMount() {
-        // debugger
-        this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
-        this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
-    }
-
-    componentDidUpdate() {
-        this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
-        this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
     }
 
     render() {
-        // this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
-        // this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
+        this.checkVideoInfo();
 
         return (
             <div className="video-show">
