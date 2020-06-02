@@ -18,9 +18,7 @@ const _nullChannel = {
 };
 
 export const selectVideo = (videos, videoId) => {
-    // debugger
     return videos[videoId] || _nullVideo;
-
 };
 
 export const selectChannel = (channels, channelId) => {
