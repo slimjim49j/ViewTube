@@ -47,9 +47,7 @@ const _nullChannel = {
 };
 
 export const selectVideo = (videos, videoId) => {
-    // debugger
     return videos[videoId] || _nullVideo;
-
 };
 
 export const selectChannel = (channels, channelId) => {
@@ -57,7 +55,7 @@ export const selectChannel = (channels, channelId) => {
 };
 ```
 
-A problem I had here was handling what the video show component would do while waiting for the video's information to be retrieved. I ended up using a redux selector to provide default values so that accessing nested values wouldn't throw errors.
+A problem I had here was handling what the video show component would do while waiting for the video's information to be retrieved. I ended up using a redux selector to provide default values so that accessing a nonexistant video's values wouldn't throw errors.
 
 #### Comments
 ![Comments](https://github.com/slimjim49j/ViewTube/blob/master/readme_images/video_comment.png)
