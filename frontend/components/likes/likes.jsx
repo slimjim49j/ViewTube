@@ -5,10 +5,6 @@ export default class Likes extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchAllUserLikes();
-    }
-
     handleLike(dislike) {
         const userLikeId = this.props.userLikeId,
             addLikeCount = this.props.addLikeCount,
@@ -63,6 +59,8 @@ export default class Likes extends Component {
     }
 
     render() {
+        if (this.props.signedIn) this.props.fetchAllUserLikes();
+
         // debugger
         const likeSvg = (
             <svg viewBox="0 0 24 24">

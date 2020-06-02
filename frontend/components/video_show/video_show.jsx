@@ -34,7 +34,8 @@ class VideoShow extends Component {
     }
 
     render() {
-        // debugger
+        // this.updateState(this.props.videos, this.props.videoId, this.props.fetchVideo);
+        // this.updateState(this.props.channels, this.props.channelId, this.props.fetchChannel);
 
         return (
             <div className="video-show">

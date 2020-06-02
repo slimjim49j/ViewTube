@@ -14,11 +14,16 @@ class CommentItem extends Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleEditSubmit = this.handleEditSubmit.bind(this);
         this.handleCancelClick = this.handleCancelClick.bind(this);
+        this.handleReplyClick = this.handleReplyClick.bind(this);
     }
 
     handleReplyClick(e) {
-        const replyForm = document.querySelector(e.target.dataset.target);
-        replyForm.classList.remove("hidden");
+        if (this.props.signedIn) {
+            const replyForm = document.querySelector(e.target.dataset.target);
+            replyForm.classList.remove("hidden");
+        } else {
+            this.props.recieveErrorPopupStatus(true);
+        }
     }
 
     handleEditClick(e) {

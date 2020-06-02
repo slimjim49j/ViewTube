@@ -56,6 +56,7 @@ class Home extends Component {
                                 key={video.id}
                                 onMouseOver={this.play}
                                 onMouseOut={this.pause}
+                                onClick={this.pause}
                                 data-id={video.id}
                             >
                                 <video 
